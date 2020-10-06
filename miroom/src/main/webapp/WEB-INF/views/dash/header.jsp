@@ -3,9 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
  
-<sec:authorize access="isAnonymous()">
-    <h5><a href='<c:url value="/"/>'>LOGIN</a> 로그인 해주세요.</h5>
-</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +19,10 @@
   <link href="/dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/dash/css/ruang-admin.min.css" rel="stylesheet">
 </head>
-
+	<!-- 권한 얻은 자마 입장  -->
+		<sec:authorize access="isAnonymous()">
+          <a href='<c:url value="/"/>' ></a>
+        </sec:authorize>
 <body id="page-top">
   <div id="wrapper">
     
@@ -231,7 +231,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
+         		<a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
