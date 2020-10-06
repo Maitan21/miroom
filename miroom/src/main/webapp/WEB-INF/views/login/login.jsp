@@ -23,36 +23,37 @@
           </div>
           <div class="col-md-7">
             <div class="card-body">
-            <img src="/resources/login/images/jsol.png" width="80%" height="100%" alt="Manager Page" class="img">
-             		    <p class="login-card-description"></p>
+            <img src="/resources/login/images/miroom.png" width="80%" height="100%" alt="Manager Page" class="img">
+             		<p class="login-card-description"></p>
               	<form id="fmField" method = "post" action="/login">
                   <div class="form-group">
-                   
                     <input type="text" name="loginId" id="loginId" class="form-control" placeholder="아이디" required="required">
                   </div>
-                  <div class="form-group mb-4">
-                    <input type="password" name="loginPw" id="loginPw" class="form-control" placeholder="패스워드" required="required">
+                  <div class="form-group">
+                    <input  style="margin-bottom : 0;"type="password" name="loginPw" id="loginPw" class="form-control" placeholder="패스워드" required="required">
                   </div>   
-                   <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
-                   <div>
-                   	<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-						<font color="red">
-					  		<p>Your login attempt was not successful due to <br/>
-					  		${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
-							<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
-						</font>
-					</c:if>
-                   </div>
+                  	
+                   <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>              	
                   <input  class="btn btn-block login-btn mb-4" type="submit" value="Login" >
                	  
                 </form>
-                
-                <a href="#!" class="forgot-password-link">비밀번호를 잊으 셨나요?</a>
-                <p class="login-card-footer-text">계정이 없으십니까? <a href="#!" class="text-reset">여기로 연락주세요</a></p>
-                <nav class="login-card-footer-nav">
-                  <a href="#!">이용 약관. </a>
-                  <a href="#!">개인 정보 정책</a>
-                </nav>
+               
+	                <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+						<font color="red" >
+						  	${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+							<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+						</font>
+					</c:if>
+				
+				<div class = "accounttext">
+	                <a href="#!" class="forgot-password-link">비밀번호를 잊으셨나요?</a>
+	                <p class="login-card-footer-text">계정이 없으십니까? <a href="#!" class="text-reset">여기로 연락주세요</a></p>
+	                <nav class="login-card-footer-nav">
+	                  <a href="#!">이용 약관. </a>
+	                  <a href="#!">개인 정보 정책</a>
+	                </nav>
+                </div>
+            
             </div>
           </div> 
         </div>  		
@@ -60,8 +61,11 @@
        	<div style="text-align : center;">
        		<div>
        			<p></p>
-    			<p>&copy; 2020.Booking MeetingRoom.All Rights Reserved by <a href="https://github.com/Maitan21" target="_blank">Maitan21</a></p>
-			</div> 	
+       			<img src="/resources/login/images/jsol.png" width="50%" height="50%" alt="Manager Page" class="img"> 	
+       			
+			</div>
+				<p></p>
+				<p>&copy; 2020.All Rights Reserved by JSOL. Designed by <a href="https://github.com/Maitan21" target="_blank">Maitan21</a></p>
 		</div>		
     </div> 
  </main>

@@ -27,9 +27,7 @@
 			default-target-url="/dash/home"
 			 />
    			
-   			<security:access-denied-handler
-			    error-page="/access_denied_page"
-			/>
+   		
 			
 			<security:logout
 		    	logout-url="/logout"

@@ -57,8 +57,8 @@ body {
     font-weight: bold;
     line-height: 20px;
     color: #fff;
-    margin-bottom: 24px; }
-    .login-card .login-btn:hover {
+    }
+   .login-card .login-btn:hover {
       border: 1px solid #000;
       background-color: transparent;
       color: #000; }
@@ -76,5 +76,11 @@ body {
   .login-card-footer-nav a {
     font-size: 14px;
     color: #919aa3; }
-
+  .mb-4, .my-4 
+  { margin-bottom: 0rem!important; }
+  .accounttext
+  {
+    margin-top: 0.5rem!important;
+  }
+    
 /*# sourceMappingURL=login.css.map */

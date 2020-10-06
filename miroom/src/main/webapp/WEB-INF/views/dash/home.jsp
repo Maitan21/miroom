@@ -106,20 +106,20 @@
                 <div class="card mb-4">
                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">주간 레포트</h6>
-                    <div class="dropdown no-arrow">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-area">
+                      <canvas id="myAreaChart"></canvas>
                     </div>
+                  </div>
+                </div>
+              </div>
+              
+               <!-- Area Chart -->
+              <div class="col-xl-12 col-lg-7">
+                <div class="card mb-4">
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">주간 레포트</h6>
                   </div>
                   <div class="card-body">
                     <div class="chart-area">
@@ -179,7 +179,7 @@
                       <thead class="thead-light">
                         <tr>
                           <th>회의실</th>
-                          <th>이용자</th>
+                          <th>이용자 / 예약자</th>
                           <th>이용시간</th>
                           <th>상태</th>
                           <th>Detail</th>
@@ -187,40 +187,34 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td><a href="#">RA0449</a></td>
-                          <td>Udin Wayang</td>
-                          <td>Nasi Padang</td>
-                          <td><span class="badge badge-success">Delivered</span></td>
+                          <td><a href="#">회의실 1</a></td>
+                          <td>조윤상</td>
+                          <td>14 : 00 ~ 16 : 00</td>
+                          <td><span class="badge badge-success">이용중</span></td>
                           <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                         </tr>
                         <tr>
-                          <td><a href="#">RA5324</a></td>
-                          <td>Jaenab Bajigur</td>
-                          <td>Gundam 90' Edition</td>
-                          <td><span class="badge badge-warning">Shipping</span></td>
+                          <td><a href="#">회의실 2</a></td>
+                          <td>박준수</td>
+                          <td>13 : 00 ~ 14 : 00</td>
+                          <td><span class="badge badge-warning">예약됨</span></td>
                           <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                         </tr>
                         <tr>
-                          <td><a href="#">RA8568</a></td>
-                          <td>Rivat Mahesa</td>
-                          <td>Oblong T-Shirt</td>
-                          <td><span class="badge badge-danger">Pending</span></td>
+                          <td><a href="#">회의실3</a></td>
+                          <td>강희민</td>
+                          <td>09 : 00 ~ 10 : 00</td>
+                          <td><span class="badge badge-danger">초과됨</span></td>
                           <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                         </tr>
                         <tr>
-                          <td><a href="#">RA1453</a></td>
-                          <td>Indri Junanda</td>
-                          <td>Hat Rounded</td>
-                          <td><span class="badge badge-info">Processing</span></td>
+                          <td><a href="#">회의실4</a></td>
+                          <td>강승우</td>
+                          <td> - </td>
+                          <td><span class="badge badge-info">비어있음</span></td>
                           <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                         </tr>
-                        <tr>
-                          <td><a href="#">RA1998</a></td>
-                          <td>Udin Cilok</td>
-                          <td>Baby Powder</td>
-                          <td><span class="badge badge-success">Delivered</span></td>
-                          <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                        </tr>
+                        
                       </tbody>
                     </table>
                   </div>
