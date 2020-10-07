@@ -1,6 +1,6 @@
 package com.miroom.dao;
 
-import javax.annotation.Resource;
+
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +17,7 @@ public class UserAuthDAO {
 	public CustomUserDetails getUserById(String username) {
 		return sqlSession.selectOne("user.selectUserById", username);
 	}
+
+
  
 }

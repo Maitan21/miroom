@@ -16,14 +16,15 @@ import com.miroom.service.CustomUserDetailsService;
  */
 @Controller
 public class HomeController {
-	
+
+
 	@RequestMapping(value="/")
 	public String loginPage() throws Exception {
 		return "/login/login";
 	}
 
-	@RequestMapping(value="/dash/home")
-	public String DashMain() throws Exception {
+	@RequestMapping(value="/dash/home", method=RequestMethod.GET)
+	public String DashMain(Model model) throws Exception {
 		return "/dash/home";
 	}
 	

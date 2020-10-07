@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:security="http://www.springframework.org/schema/security"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+							http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+						
+	
+	
+	<context:component-scan base-package="com.miroom.dao"/>
+	<!--  확장자를 이용해 패턴틀 걸때는 /**/*.헤당 확자자로 할 것 (Ant patter 규칙) -->
+	<security:http auto-config="true" use-expressions = "true">
+
+		<!-- 정적 리소스는 모두 접근 허용 -->
+		
+		 <security:intercept-url pattern="/dash/**" access="hasRole('ROLE_USER')"/>
+		 <security:intercept-url pattern="/**" access="permitAll" /> 
+
+		<!-- 로그인 설정 -->
+		<security:form-login	
+			username-parameter="loginId" 
+			password-parameter="loginPw"
+			login-processing-url="/login"
+			login-page="/"
+			default-target-url="/dash/home"
+			 />
+   			
+   		
+			
+			<security:logout
+		    	logout-url="/logout"
+		    	invalidate-session="true"
+		    	logout-success-url="/"
+		    />
+
+
+	</security:http>
+	
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="userService">
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<bean id="userService" class="com.miroom.service.CustomUserDetailsService"/>
+
+</beans>
