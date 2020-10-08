@@ -2,8 +2,10 @@
 - 'Spring' + 'Spring Security' + 'My batis' + 'AWS RDS(My SQL)를 이용하여 로그인. 
 
 ## 목표
+![image](https://user-images.githubusercontent.com/45276804/95453634-2bdc2180-09a6-11eb-9442-2956f85df02d.png)
 
 - `세션` 기반 인증
+- `AWS EC2` 와 `AWS RDS`를 이용한 클라우드 서비스
 - `회의실` 현황 조회 / 예약 관리 / 모니터링 
 
 ## 개발환경
