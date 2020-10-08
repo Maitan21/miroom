@@ -1,9 +1,12 @@
 # M I R O O M 회의실 관리 플랫폼
 - 'Spring' + 'Spring Security' + 'My batis' + 'AWS RDS(My SQL)를 이용하여 로그인. 
+## SCREENSHOT
+<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453634-2bdc2180-09a6-11eb-9442-2956f85df02d.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453775-6cd43600-09a6-11eb-8239-29b3007e34a7.png"></p>
 
 ## 목표
-<p align="center"><img height="80%" width="80%" src="https://user-images.githubusercontent.com/45276804/95453634-2bdc2180-09a6-11eb-9442-2956f85df02d.png"><img height="80%" width="80%" src="https://user-images.githubusercontent.com/45276804/95453775-6cd43600-09a6-11eb-8239-29b3007e34a7.png"></p>
-<p align="center"><img height="80%" width="80%" src="https://user-images.githubusercontent.com/45276804/95453775-6cd43600-09a6-11eb-8239-29b3007e34a7.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453634-2bdc2180-09a6-11eb-9442-2956f85df02d.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453775-6cd43600-09a6-11eb-8239-29b3007e34a7.png"></p>
 
 - `세션` 기반 인증
 - `AWS EC2` 와 `AWS RDS`를 이용한 클라우드 서비스
