@@ -12,7 +12,5 @@
 				ID=#{ loginId}
 		]]>
 	</select>
-	
-	
-	
+
  </mapper>

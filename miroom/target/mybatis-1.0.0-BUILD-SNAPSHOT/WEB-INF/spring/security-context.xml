@@ -6,9 +6,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
 							http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 							http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-						
-	
-	
+
 	<context:component-scan base-package="com.miroom.dao"/>
 	<!--  확장자를 이용해 패턴틀 걸때는 /**/*.헤당 확자자로 할 것 (Ant patter 규칙) -->
 	<security:http auto-config="true" use-expressions = "true">
@@ -27,12 +25,11 @@
 			default-target-url="/dash/home"
 			 />
    			
-   		
-			
-			<security:logout
-		    	logout-url="/logout"
-		    	invalidate-session="true"
-		    	logout-success-url="/"
+   		<!-- 로그아웃 설정 -->
+		<security:logout
+		   	logout-url="/logout"
+		   	invalidate-session="true"
+		   	logout-success-url="/"
 		    />
 
 
@@ -40,9 +37,15 @@
 	
 	<security:authentication-manager>
 		<security:authentication-provider user-service-ref="userService">
+			<security:password-encoder ref ="passwordEncoder"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
-	
+
+	<!-- dto -->
 	<bean id="userService" class="com.miroom.service.CustomUserDetailsService"/>
+	<!-- 암호화 -->
+	<bean id="passwordEncoder"
+		  class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
 
 </beans>

@@ -73,7 +73,7 @@
         </a>
       </li>
       <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
+      <div class="version"> 1.0.3</div>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">

@@ -46,8 +46,8 @@
 					</c:if>
 				
 				<div class = "accounttext">
-	                <a href="#!" class="forgot-password-link">비밀번호를 잊으셨나요?</a>
-	                <p class="login-card-footer-text">계정이 없으십니까? <a href="#!" class="text-reset">여기로 연락주세요</a></p>
+	                <a href="#!" class="forgot-password-link">로그인이 되지 않습니까?</a>
+	                <p class="login-card-footer-text"> <a href="#!" class="text-reset">여기로 연락주세요!</a></p>
 	                <nav class="login-card-footer-nav">
 	                  <a href="#!">이용 약관. </a>
 	                  <a href="#!">개인 정보 정책</a>
@@ -61,7 +61,7 @@
        	<div style="text-align : center;">
        		<div>
        			<p></p>
-       			<img src="/resources/login/images/jsol.png" width="50%" height="50%" alt="Manager Page" class="img"> 	
+       			<img src="/resources/login/images/jsol.png" width="25%" height="50%" alt="Manager Page" class="img">
        			
 			</div>
 				<p></p>
