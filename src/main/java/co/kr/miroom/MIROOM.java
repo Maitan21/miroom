@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MIROOM {
 
     public static void main(String[] args) {
+
         SpringApplication.run(MIROOM.class, args);
     }
 
