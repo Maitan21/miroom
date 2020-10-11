@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,20 +38,18 @@
                   <input  class="btn btn-block login-btn mb-4" type="submit" value="Login" >
                	  
                 </form>
-               
-	                <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-						<font color="red" >
-						  	${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-							<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
-						</font>
-					</c:if>
+                <!-- 로그인 실패 시 출력할 메세지 -->
+                <a style="color: #ff0000; margin-top:5px;">
+                    <Strong> ${requestScope.loginFailMsg}</Strong>
+                </a>
+
 				
 				<div class = "accounttext">
 	                <a href="#!" class="forgot-password-link">로그인이 되지 않습니까?</a>
 	                <p class="login-card-footer-text"> <a href="#!" class="text-reset">여기로 연락주세요!</a></p>
 	                <nav class="login-card-footer-nav">
-	                  <a href="#!">이용 약관. </a>
-	                  <a href="#!">개인 정보 정책</a>
+	                  <a href="tos">이용 약관. 개인 정보 정책 </a>
+
 	                </nav>
                 </div>
             
