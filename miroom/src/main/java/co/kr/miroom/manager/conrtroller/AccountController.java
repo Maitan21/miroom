@@ -20,10 +20,11 @@ public class AccountController {
     @Autowired
     AccountMapper accountMapper;
 
-    @RequestMapping("/dashboard/home")
-    public String admin() {
-        return "dashboard/home";
+    @RequestMapping("/")
+    public String homepage() {
+        return "index";
     }
+
     @RequestMapping("/tos")
     public String tos() {
         return "handler/TOS";

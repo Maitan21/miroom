@@ -4855,6 +4855,7 @@
 	
 		return div[0];
 	}
+
 	
 	
 	
@@ -11588,7 +11589,7 @@
 			 */
 			"sThousands": ",",
 	
-	
+
 			/**
 			 * Detail the action that will be taken when the drop down menu for the
 			 * pagination length option is changed. The '_MENU_' variable is replaced
@@ -11627,8 +11628,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
-	
+			"sLengthMenu": "Show _MENU_ 10개씩 ",
+
 	
 			/**
 			 * When using Ajax sourced data and during the first draw when DataTables is
