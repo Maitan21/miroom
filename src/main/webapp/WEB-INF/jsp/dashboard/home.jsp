@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file = "header.jsp" %>
+</head>
 <!-- Topbar -->
 <body id="page-top">
 <div id="wrapper">
   <!-- Sidebar -->
   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/home">
       <div class="sidebar-brand-icon">
         <img src="/static/dash/img/logo/miroom.png">
       </div>
@@ -16,7 +17,7 @@
     <li class="nav-item active">
       <a class="nav-link" href="/dashboard/home">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>대시보드</span></a>
     </li>
     <hr class="sidebar-divider">
 
@@ -297,7 +298,7 @@
                     <div class="card">
                       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">회의실 현황</h6>
-                        <a class="m-0 float-right btn btn-danger btn-sm" href="#">View More <i
+                        <a class="m-0 float-right btn btn-danger btn-sm" href="/dashboard/roomtable">View More <i
                             class="fas fa-chevron-right"></i></a>
                       </div>
                       <div class="table-responsive">

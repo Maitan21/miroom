@@ -200,7 +200,7 @@
                         </li>
                     </ul>
                     <br>
-                    <a href="#" class="button green gradient ae-3">Purchase</a>
+                    <a href="#" class="button green gradient ae-3">구매</a>
                 </div>
 
             </div>
@@ -208,6 +208,7 @@
     </div>
     <div class="background" style="background-image:url(/static/handler/img/home/room3.jpg)"></div>
 </section>
+
 
 <!--Pricing -->
 <section class="slide fade-6 kenBurns">

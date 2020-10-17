@@ -2,13 +2,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file = "header.jsp" %>
 <!-- Topbar -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/dash/css/jquery.skedTape.css">
+<style>
+    .bd-footer {
+        font-size: .875rem;
+        text-align: center;
+        background-color: #f7f7f7;
+    }
+    .bd-footer a {
+        font-weight: 600;
+        color: #495057;
+    }
+    .bd-footer a:focus, .bd-footer a:hover {
+        color: #007bff;
+    }
+    .bd-footer p {
+        margin-bottom: 0;
+    }
+</style>
 
+</head>
 <!-- 현황 -->
 <body id="page-top">
 <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/home">
             <div class="sidebar-brand-icon">
                 <img src="/static/dash/img/logo/miroom.png">
             </div>
@@ -18,7 +40,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>대시보드</span></a>
         </li>
         <hr class="sidebar-divider">
 
@@ -161,9 +183,13 @@
                     <div class="card">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">회의실 현황</h6>
+
                             <a class="m-0 float-right btn btn-danger btn-sm" href="#">관리 &nbsp<i
-                                    class="fas fa-chevron-right"></i></a>
+                                    class="fas fa-chevron-right"></i>
+                            </a>
+
                         </div>
+
                         <div class="table-responsive">
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
@@ -193,7 +219,13 @@
                                                 <td><span class="badge badge-danger">이용불가</span></td>
                                             </c:otherwise>
                                         </c:choose>
-                                        <td><a href="#" class="btn btn-sm btn-primary">상세 보기</a></td>
+                                        <td>
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo" class="btn btn-sm btn-primary">
+                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
+                                            상세 보기
+                                        </a>
+
+                                        </td>
                                     </tr>
                                 </c:forEach>
 
@@ -203,8 +235,37 @@
                         <div class="card-footer"></div>
                     </div>
                 </div>
+                <div>
+                    <!-- EXAMPLE 2 -->
+                    <div class="mb-4" style="margin:20px" >
+                        <h2 class="mb-3">테스트</h2>
+                        <div class="alert alert-primary mb-3">
+                        </div>
+                        <div id="sked2"></div>
+                    </div>
+                </div>
             </div>
             <!-- 메인 끝 -->
+
+            <!-- Modal Info -->
+            <div class="modal fade" id="RoomInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="RoomDetails">회의실 정보</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>test ${modalint[0]}</p>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Modal Logout -->
             <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -248,6 +309,117 @@
         <!-- Footer End-->
     </div>
 </div>
-                <!-- Footer -->
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/static/dash/js/jquery.skedTape.js"></script>
+<script type="text/javascript">
+    // --------------------------- Data --------------------------------
+    var locations = [
+        {id: '1', name: '잉여실'},
+        {id: '2', name: '숙취실'},
+        {id: '3', name: '취조실'},
+        {id: '5', name: '경비실'},
+        {id: '6', name: '잡담실'},
+    ];
+    var events = [
+        {
+            name: '종프1',
+            location: '1',
+            start: today(12, 0),
+            end: today(13, 30)
+        },
+
+        {
+            name: '종프2',
+            location: '1',
+            start: today(09, 0),
+    end: today(11, 30)
+    },
+    {
+        name: 'Meeting with custom class',
+            location: '2',
+        start: today(21, 0),
+        end: today(22, 30),
+    },
+    {
+        name: '제이솔루션',
+            location: '2',
+        start: today(13, 45),
+        end: today(18, 45),
+        class: 'custom-class'
+    },
+    {
+        name: 'And another one...',
+            location: '2',
+        start: today(3, 10),
+        end: today(5, 30),
+        class: 'custom-class'
+    },
+    {
+        name: 'Disabled meeting',
+            location: '3',
+        start: today(20, 15),
+        end: today(21, 30),
+        disabled: true /*락*/
+    },
+    {
+        name: 'Meeting',
+            location: '3',
+        start: yesterday(23, 45),
+        end: today(1, 30)
+    },
+    {
+        name: 'Meeting that started early',
+            location: '6',
+        start: yesterday(21, 45),
+        end: today(0, 45)
+    },
+    {
+        name: 'Late meeting',
+            location　: '5',
+        start: today(11, 15),
+        end: today(13, 45)
+    },
+    ];
+    // -------------------------- Helpers ------------------------------
+    function today(hours, minutes) {
+        var date = new Date();
+        date.setHours(hours, minutes, 0, 0);
+        return date;
+    }
+
+    function yesterday(hours, minutes) {
+        var date = today(hours, minutes);
+        date.setTime(date.getTime() - 24 * 60 * 60 * 1000);
+        return date;
+    }
+    function tomorrow(hours, minutes) {
+        var date = today(hours, minutes);
+        date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+        return date;
+    }
+    // --------------------------- Example 2 ---------------------------
+    var sked2Config = {
+        caption: '회의실 명',
+        start: today(9, 0),
+        end: today(22, 0),
+        showEventTime: true,
+        showEventDuration: true,
+        locations: locations.map(function(location) {
+            var newLocation = $.extend({}, location);
+            delete newLocation.tzOffset;
+            return newLocation;
+        }),
+        events: events.slice(),
+        tzOffset: 0,
+        sorting: true,
+        orderBy: 'name',
+    };
+    var $sked2 = $.skedTape(sked2Config);
+    $sked2.appendTo('#sked2').skedTape('render');
+    //$sked2.skedTape('destroy');
+    $sked2.skedTape(sked2Config);
+</script>
 <%@ include file = "footer.jsp" %>
