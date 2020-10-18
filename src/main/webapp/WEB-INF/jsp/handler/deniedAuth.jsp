@@ -8,8 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>404 HTML Tempalte by Colorlib</title>
+    <!--Meta tag Setting-->
+    <meta property="og:title" content="M I R O O M"/>
+    <meta property="og:description" content ="☕️🍹🍰🥪
+	이 세상 모든 회의실 M I R O O M"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/dash/img/logo/miroom.png">
+    <meta property="og:image" content="/static/handler/img/home/logo.png"/>
+    <title>404</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">

@@ -4,9 +4,15 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 
+    <!--Meta tag Setting-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="og:title" content="M I R O O M"/>
+    <meta property="og:description" content ="☕️🍹🍰🥪
+	이 세상 모든 회의실 M I R O O M"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/dash/img/logo/miroom.png">
+    <meta property="og:image" content="/static/handler/img/home/logo.png"/>
     <!-- Page Title -->
     <title>MIROOM GET START</title>
 

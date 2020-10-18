@@ -8,13 +8,16 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="/static/dash/img/logo/miroom.png" rel="icon">
-  <title>M I R O O M 관리자</title>
+  <!--Meta tag Setting-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="M I R O O M"/>
+  <meta property="og:description" content ="☕️🍹🍰🥪
+	이 세상 모든 회의실 M I R O O M"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/dash/img/logo/miroom.png">
+  <meta property="og:image" content="/static/handler/img/home/logo.png"/>
+
+  <title>M I R O O M </title>
   <link href="/static/dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="/static/dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/static/dash/css/ruang-admin.min.css" rel="stylesheet">
