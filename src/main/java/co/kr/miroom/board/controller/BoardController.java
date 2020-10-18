@@ -20,7 +20,6 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
-
     //TODO Main
     @RequestMapping("/dashboard/home")
     public ModelAndView ViewHome(Authentication authentication) throws Exception{
@@ -53,6 +52,30 @@ public class BoardController {
         UserDetails userVO = (UserDetails) authentication.getPrincipal();
         System.out.println("ID정보 : " + userVO.getUsername());
         ModelAndView mv = new ModelAndView("/dashboard/roomTable");
+
+        //최종 전달할 객체
+        ArrayList<Object> list = new ArrayList<Object>();
+
+        //list 1 : 방목록
+        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        list.add(room);
+
+        //list 2 : 통계값
+
+
+        //전달
+        mv.addObject("list",list);
+
+        return mv;
+    }
+
+    //TODO 회의실 스케쥴러
+    @RequestMapping("/dashboard/scheduler")
+    public ModelAndView scheduler(Authentication authentication) throws Exception{
+
+        UserDetails userVO = (UserDetails) authentication.getPrincipal();
+        System.out.println("ID정보 : " + userVO.getUsername());
+        ModelAndView mv = new ModelAndView("/dashboard/scheduler");
 
         //최종 전달할 객체
         ArrayList<Object> list = new ArrayList<Object>();

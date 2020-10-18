@@ -35,7 +35,7 @@
             <!-- show 열람 고정-->
             <div id="collapseTable" class="collapse show" aria-labelledby="headingTable" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-
+                    <a class="collapse-item" href="/dashboard/scheduler">회의실 스케쥴</a>
                     <a class="collapse-item " href="/dashboard/roomtable">회의실 현황</a>
                     <a class="collapse-item active" href="/dashboard/reservationtable">예약 현황</a>
                 </div>
@@ -133,7 +133,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                            <img class="img-profile rounded-circle" src="/static/dash/img/boy.png" style="max-width: 60px">
+                            <img src="/static/login/images/jsol.png" style="max-width: 100px">
                             <span class="ml-2 d-none d-lg-inline text-white small"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -179,16 +179,19 @@
                             <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                                 <thead class="thead-light">
                                 <tr>
+                                    <th>예약 번호</th>
                                     <th>예약자</th>
                                     <th>회의실</th>
                                     <th>예약 날짜</th>
                                     <th>예약 시간</th>
                                     <th>전화번호</th>
-                                    <th>메세지</th>
+                                    <th>비고</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
+                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">1</label></td>
                                     <td>홍길동</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
@@ -197,6 +200,8 @@
                                     <td> - </td>
                                 </tr>
                                 <tr>
+                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">2</label></td>
                                     <td>홍길동</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
@@ -205,6 +210,8 @@
                                     <td> 테스트 </td>
                                 </tr>
                                 <tr>
+                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio3">3</label></td>
                                     <td>홍길동</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
@@ -212,142 +219,7 @@
                                     <td>010-111-1111</td>
                                     <td> 깃허브 </td>
                                 </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
-                                <tr>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 깃허브 </td>
-                                </tr>
+
 
                                 </tbody>
                             </table>

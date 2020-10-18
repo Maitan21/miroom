@@ -774,11 +774,13 @@ SkedTape.prototype = {
 		var start = this.start.getTime();
 		var end = this.end.getTime();
 		var utcNow = new Date().getTime();
+
 		Object.keys(this.timeIndicators).forEach(function(locationId) {
 			var location = this.getLocation(locationId);
 			var tzOffset = location.tzOffset === undefined ? this.tzOffset : location.tzOffset;
 			var tzDiff = tzOffset - CURRENT_TZ_OFFSET;
-			var now = utcNow - tzDiff * MS_PER_MINUTE;
+			var now = utcNow - 32400; /* 한국시간 : UTC - 32400초*/
+			console.log(now);
 			var $timeIndicator = this.timeIndicators[locationId];
 			if (now >= start && now <= end) {
 				var offset = 100 * (now - start) / (end - start) + '%';

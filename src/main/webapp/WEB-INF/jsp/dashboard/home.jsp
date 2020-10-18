@@ -33,6 +33,7 @@
       </a>
       <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="/dashboard/scheduler">회의실 스케쥴</a>
           <a class="collapse-item" href="/dashboard/roomtable">회의실 현황</a>
           <a class="collapse-item" href="/dashboard/reservationtable">예약 현황</a>
         </div>
@@ -130,7 +131,7 @@
               <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                  <img class="img-profile rounded-circle" src="/static/dash/img/boy.png" style="max-width: 60px">
+                  <img src="/static/login/images/jsol.png" style="max-width: 100px">
                   <span class="ml-2 d-none d-lg-inline text-white small"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
