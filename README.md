@@ -2,8 +2,24 @@
 - 'Spring Boot' + 'Spring Security' + 'My batis' + 'AWS RDS(My SQL)를 이용한 회의실 관리 플랫폼
 - 최신 버전 : `V.2.1.5` 
 ## SCREENSHOT
-<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453634-2bdc2180-09a6-11eb-9442-2956f85df02d.png"></p>
-<p align="center"><img src="https://user-images.githubusercontent.com/45276804/95453775-6cd43600-09a6-11eb-8239-29b3007e34a7.png"></p>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/45276804/96376066-c8c56880-11b7-11eb-8a3b-f63810f183dc.png" width="49%" style="margin-right:10px" />
+  <img src="https://user-images.githubusercontent.com/45276804/96376100-ed214500-11b7-11eb-9fa6-97b839855b06.png" width="49%" style="margin-right:10px" />  
+  <img src="https://user-images.githubusercontent.com/45276804/96376169-412c2980-11b8-11eb-96fd-64e85d5acf5c.png" width="49%" style="margin-right:10px" />
+   <img src="https://user-images.githubusercontent.com/45276804/96376227-9f590c80-11b8-11eb-8e4f-d2551c4cb665.png" width="49%"/>
+</p>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/45276804/96375943-1db4af00-11b7-11eb-89b3-c65f49cc132f.png" width="49%" style="margin-right:10px" />
+  <img src="https://user-images.githubusercontent.com/45276804/96375952-27d6ad80-11b7-11eb-8335-36e1771d76db.png" width="49%" /> 
+</p>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/45276804/96375956-302ee880-11b7-11eb-8f2b-f72ace8534ef.png" width="49%" style="margin-right:10px" />
+  <img src="https://user-images.githubusercontent.com/45276804/96375971-4046c800-11b7-11eb-9470-1c236398e0a4.png" width="49%" /> 
+</p>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/45276804/96375980-4dfc4d80-11b7-11eb-8d9f-65c708d2c8e3.png" width="49%" style="margin-right:10px" />
+  <img src="https://user-images.githubusercontent.com/45276804/96375985-56548880-11b7-11eb-950f-d9c89c7606f4.png" width="49%" /> 
+</p>
 
 ## 목표
 - `세션` 기반 인증 with `Spring Security`
