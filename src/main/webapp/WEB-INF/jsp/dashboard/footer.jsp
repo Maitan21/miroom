@@ -9,8 +9,6 @@
 <!--find script-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/static/dash/js/ruang-admin.min.js"></script>
-<script src="/static/dash/vendor/chart.js/Chart.min.js"></script>
-<script src="/static/dash/js/demo/chart-area-demo.js"></script>
 <!--<script src="/static/dash/vendor/jquery/jquery.min.js"></script>-->
 <script src="/static/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/static/dash/vendor/jquery-easing/jquery.easing.min.js"></script>

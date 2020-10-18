@@ -5,7 +5,7 @@
 <!-- Topbar -->
 <body id="page-top">
 <div id="wrapper">
-  <!-- Sidebar -->
+  <!-- 사이드바 상단 로고-->
   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/home">
       <div class="sidebar-brand-icon">
@@ -21,10 +21,12 @@
     </li>
     <hr class="sidebar-divider">
 
+    <!-- 사이드바 모니터링 탭 -->
     <div class="sidebar-heading">
       Monitoring
     </div>
 
+    <!-- 현황 탭 -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
          aria-controls="collapseTable">
@@ -39,31 +41,27 @@
         </div>
       </div>
     </li>
+
+    <!-- 차트탭-->
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="/dashboard/chart">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>통계</span>
+        <span>차트</span>
       </a>
     </li>
 
+    <!-- 설정 탭-->
     <div class="sidebar-heading">
       Management
     </div>
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#management" aria-expanded="true"
-         aria-controls="management">
-        <i class="fas fa-fw fa-table"></i>
+      <a class="nav-link" href="/dashboard/setting">
+        <i class="fab fa-fw fa-wpforms"></i>
         <span>설정</span>
       </a>
-      <div id="management" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Forms</h6>
-          <a class="collapse-item" href="#">계정 설정</a>
-        </div>
-      </div>
     </li>
     <hr class="sidebar-divider">
-    <div class="version">Version 1.0.3</div>
+    <div class="version">Version 2.1.5</div>
   </ul>
 
   <!-- Sidebar -->
@@ -145,7 +143,7 @@
           </nav>
 
           <!-- 여기서 폼 메인-->
-          <!-- Container Fluid-->
+          <!-- 네비게이션-->
           <div class="container-fluid" id="container-wrapper">
               <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">대시보드</h1>
@@ -179,6 +177,7 @@
                       </div>
                     </div>
                   </div>
+
                   <!-- 이용가능 회의실 -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card h-100">
@@ -200,6 +199,7 @@
                       </div>
                     </div>
                   </div>
+
                   <!-- 예약된 회의실 -->
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card h-100">
@@ -344,7 +344,7 @@
               </div>
               <!-- 메인 끝 -->
 
-              <!-- Modal Logout -->
+              <!-- 모달 로그아웃 -->
               <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                    aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -388,6 +388,9 @@
     <!-- Footer End-->
   </div>
 </div>
+
+<script src="/static/dash/vendor/chart.js/Chart.min.js"></script>
+<script src="/static/dash/js/demo/chart-area-demo.js"></script>
 <!-- body end -->
 <%@ include file = "footer.jsp" %>
 

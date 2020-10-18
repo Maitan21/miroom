@@ -93,10 +93,40 @@ public class BoardController {
         return mv;
     }
 
+    //TODO 설정
+    @RequestMapping("/dashboard/setting")
+    public ModelAndView setting(Authentication authentication) throws Exception{
+
+        UserDetails userVO = (UserDetails) authentication.getPrincipal();
+        System.out.println("ID정보 : " + userVO.getUsername());
+        ModelAndView mv = new ModelAndView("/dashboard/setting");
+
+        //최종 전달할 객체
+        ArrayList<Object> list = new ArrayList<Object>();
+
+        //list 1 : 방목록
+        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        list.add(room);
+
+        //list 2 : 통계값
+
+
+        //전달
+        mv.addObject("list",list);
+
+        return mv;
+    }
+
 
     //TODO 예약현황
     @RequestMapping("/dashboard/reservationtable")
     public String reservationTable() {
         return "/dashboard/reservationTable";
+    }
+
+    //TODO 차트
+    @RequestMapping("/dashboard/chart")
+    public String chart() {
+        return "/dashboard/chart";
     }
 }

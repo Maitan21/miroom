@@ -3,10 +3,9 @@
 <%@ include file = "header.jsp" %>
 <link href="/static/dash/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
-
 <body id="page-top">
 <div id="wrapper">
-    <!-- Sidebar -->
+    <!-- 사이드바 상단 로고 / 이름 설정 -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/home">
             <div class="sidebar-brand-icon">
@@ -42,7 +41,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/dashboard/chart">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>통계</span>
             </a>
@@ -52,25 +51,17 @@
             Management
         </div>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#management" aria-expanded="true"
-               aria-controls="management">
-                <i class="fas fa-fw fa-table"></i>
+            <a class="nav-link" href="/dashboard/setting">
+                <i class="fab fa-fw fa-wpforms"></i>
                 <span>설정</span>
             </a>
-            <div id="management" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Forms</h6>
-                    <a class="collapse-item" href="#">계정 설정</a>
-                </div>
-            </div>
         </li>
         <hr class="sidebar-divider">
-        <div class="version">Version 2.1.2</div>
+        <div class="version">Version 2.1.5</div>
     </ul>
 
-    <!-- Sidebar -->
-    <div id="content-wrapper" class="d-flex flex-column">
 
+    <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
             <!-- TopBar -->
             <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
@@ -148,7 +139,7 @@
 
 
             <!-- 메인 -->
-            <!-- Container Fluid-->
+            <!-- 네비게이션 -->
             <div class="container-fluid" id="container-wrapper">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">현황 관리</h1>
@@ -159,9 +150,7 @@
                     </ol>
                 </div>
 
-                <!-- Datatables -->
-
-                <!-- DataTable with Hover -->
+                <!-- 데이터테이블 -->
                 <div class="col-lg-12">
                     <div class="card mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -186,38 +175,57 @@
                                     <th>예약 시간</th>
                                     <th>전화번호</th>
                                     <th>비고</th>
+                                    <th>Detail</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio1">1</label></td>
-                                    <td>홍길동</td>
+                                    <td><a href="#">1</a></td>
+                                    <td>조윤상</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
                                     <td>15:30 ~ 16:30</td>
                                     <td>010-111-1111</td>
                                     <td> - </td>
+                                    <td>
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
+                                            상세 보기
+                                        </a>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio2">2</label></td>
-                                    <td>홍길동</td>
+                                    <td><a href="#">2</a></td>
+                                    <td>권세기</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
                                     <td>15:30 ~ 16:30</td>
                                     <td>010-111-1111</td>
                                     <td> 테스트 </td>
+                                    <td>
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
+                                            상세 보기
+                                        </a>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td class="custom-control custom-radio"><input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio3">3</label></td>
+                                    <td><a href="#">3</a></td>
                                     <td>홍길동</td>
                                     <td>대합실</td>
                                     <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
+                                    <td>12:30 ~ 16:30</td>
+                                    <td>010-134-1111</td>
                                     <td> 깃허브 </td>
+                                    <td>
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
+                                            상세 보기
+                                        </a>
+
+                                    </td>
                                 </tr>
 
 
@@ -228,7 +236,7 @@
                 </div>
 
 
-                <!-- Modal Logout -->
+                <!-- 모달 로그아웃 -->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                      aria-hidden="true">
                     <div class="modal-dialog" role="document">

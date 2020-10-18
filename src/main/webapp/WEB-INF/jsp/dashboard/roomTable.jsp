@@ -349,10 +349,10 @@
 
 </style>
 </head>
-<!-- 현황 -->
+<!-- 회의실 현황 -->
 <body id="page-top">
 <div id="wrapper">
-    <!-- Sidebar -->
+    <!-- 사이드바 상단 -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/home">
             <div class="sidebar-brand-icon">
@@ -360,6 +360,7 @@
             </div>
             <div class="sidebar-brand-text mx-3">M I R O O M</div>
         </a>
+        <!--- 대시보드 탭 -->
         <hr class="sidebar-divider my-0">
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/home">
@@ -372,6 +373,7 @@
             Monitoring
         </div>
 
+        <!-- 현황 관리 탭 -->
         <li class="nav-item active">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
                aria-controls="collapseTable">
@@ -388,35 +390,28 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/dashboard/chart">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>통계</span>
+                <span>차트</span>
             </a>
         </li>
 
+        <!-- 관리자 탭 -->
         <div class="sidebar-heading">
             Management
         </div>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#management" aria-expanded="true"
-               aria-controls="management">
-                <i class="fas fa-fw fa-table"></i>
+            <a class="nav-link" href="/dashboard/setting">
+                <i class="fab fa-fw fa-wpforms"></i>
                 <span>설정</span>
             </a>
-            <div id="management" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Forms</h6>
-                    <a class="collapse-item" href="#">계정 설정</a>
-                </div>
-            </div>
         </li>
         <hr class="sidebar-divider">
-        <div class="version">Version 1.0.3</div>
+        <div class="version">Version 2.1.5</div>
     </ul>
 
-    <!-- Sidebar -->
-    <div id="content-wrapper" class="d-flex flex-column">
 
+    <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
             <!-- TopBar -->
             <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
@@ -492,7 +487,7 @@
                 </ul>
             </nav>
             <!-- 메인 -->
-            <!-- Container Fluid-->
+            <!-- 네비게이션 -->
             <div class="container-fluid" id="container-wrapper">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">현황 관리</h1>
@@ -503,7 +498,7 @@
                     </ol>
                 </div>
 
-                <!-- 현황 -->
+                <!-- 현황 테이블 -->
                 <div class="col-xl-12 col-lg-7 mb-4">
                     <div class="card">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -529,8 +524,7 @@
                                 <c:set var="cntAble" value = "0"  />
                                 <c:forEach var = "item" items="${list[0]}" varStatus="no">
                                     <tr>
-                                        <td class="custom-control custom-radio"><input type="radio" id="customRadio${no.count}" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio${no.count}">${no.count}</label></td>
+                                        <td><a href="#">${no.count}</a></td>
                                         <td><c:out value="${item.ROOM_NAME}"></c:out></td>
                                         <td><c:out value="${item.SIZE}"></c:out></td>
                                         <c:choose>
@@ -564,7 +558,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal Info -->
+
+            <!-- 모달 인포 -->
             <c:forEach var="name" items="${list[0]}" varStatus="status">
                 <div class="modal fade" id="RoomInfo${status.count}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                      aria-hidden="true">
@@ -619,7 +614,8 @@
                 </div>
 
             </c:forEach>
-            <!--- modal add-->
+
+            <!-- 추가(Add) 모달-->
 
             <div class="modal fade" id="RoomAdd" tabindex="-1" role="dialog"
                  aria-hidden="true">
@@ -672,7 +668,7 @@
                 </div>
             </div>
 
-            <!-- Modal Logout -->
+            <!-- 로그아웃 모달 -->
             <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                  aria-hidden="true">
                 <div class="modal-dialog" role="document">
