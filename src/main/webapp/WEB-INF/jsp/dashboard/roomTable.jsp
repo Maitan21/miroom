@@ -592,7 +592,7 @@
                                                         <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">별관 4F</span> </div>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex flex-column"> <span class="text-center head">비고</span> <span class="text-center bottom">-</span> </div>
+                                                        <div class="d-flex flex-column"> <span class="text-center head">비고</span> <span class="text-center bottom">WiFi</span></div>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -616,7 +616,6 @@
             </c:forEach>
 
             <!-- 추가(Add) 모달-->
-
             <div class="modal fade" id="RoomAdd" tabindex="-1" role="dialog"
                  aria-hidden="true">
                 <div>
@@ -630,10 +629,17 @@
                             </div>
                             <div class="modal-body">
                                 <form>
+                                    <!-- 회의실 명 -->
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">회의실명</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="회의실명 입력">
+                                        <label for="roomName">회의실명</label>
+                                        <input type="email" class="form-control" id="roomName" placeholder="회의실명 입력">
                                     </div>
+                                    <!-- 회의실 위치 -->
+                                    <div class="form-group">
+                                        <label for="roomlocation">회의실 위치</label>
+                                        <input type="email" class="form-control" id="roomLocation" placeholder="회의실 위치 입력">
+                                    </div>
+                                    <!-- 회의실 사이즈 -->
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">방 사이즈 / 인원</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
@@ -644,14 +650,15 @@
                                         </select>
                                     </div>
 
-
+                                    <!-- 사진 불러오기 모뮬 -->
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">회의실 사진 선택</label>
+                                        <label for="ImgFile">회의실 사진 선택</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">불러오기</label>
+                                            <input type="file" class="custom-file-input" id="ImgFile">
+                                            <label class="custom-file-label" for="ImgFile">불러오기</label>
                                         </div>
                                     </div>
+                                    <!-- 셀렉터 모듈 -->
                                     <div class="form-group">
                                         <select multiple data-placeholder="Add tools">
                                             <option selected>WiFi</option>
@@ -659,8 +666,10 @@
                                             <option>보드 / 칠판</option>
                                         </select>
                                     </div>
-                                    <div>    <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
-                                        <span class="text">추 가</span></a></div>
+                                    <div>
+                                        <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                            <span class="text">추 가</span></a>
+                                    </div>
                                 </form>
                             </div>
                         </div>

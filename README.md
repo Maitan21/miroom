@@ -57,11 +57,16 @@
 - 스케쥴러
 
 ## 실행방법
-1. AWS의 퍼블릭 주소로 `SSH 접속`
-2. `git clone 레퍼토지티`
-3. `./mvnw` 를 실행 war로 패키징
-4. target 폴더로 이동
-5. `nohup java -jar miroom.war&` 입력
+1. EC2 인스턴스에 `jdk 11`설치
+
+2. EC2 인스턴스에 `git` 설치
+
+3. `git clone repository`
+
+4. `./mvnw clean package`
+
+5. `target` 에서`nohup java -jar [빌드된 war 파일이름] &`
+
 ## 기여자
 - 경북대학교 컴퓨터학부 산학프로젝트
 - (주) 제이솔루션
