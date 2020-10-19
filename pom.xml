@@ -15,7 +15,7 @@
     <description>M I R O O M</description>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
