@@ -310,7 +310,7 @@
     <div class="sections desktop">
         <div class="left"><a href="#" class="opacity-8">(주)제이솔루션 <svg style="height:21px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple"></use></svg>(053)-111-1111</a></div>
         <div class="center"><span class="nextSlide"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></span></div>
-        <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
+
     </div>
     <div class="sections compact hidden">
         <div class="right">
@@ -319,20 +319,6 @@
     </div>
 </nav>
 
-<!-- Share Window -->
-<div class="dropdown share bottom right" data-dropdown-id="2" data-text="Take a look at this" data-url="https://designmodo.com" data-pinterest-image="https://designmodo.com/wp-content/uploads/2015/10/Presentation.jpg">
-    <div class="center padding-2">
-        <div class="title">Share</div>
-        <a href="#">Contact us</a>
-    </div>
-    <ul>
-        <li class="social-facebook"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-like"></use></svg></li>
-        <li class="social-twitter"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></li>
-        <li class="social-googlePlus"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#googlePlus"></use></svg></li>
-        <li class="social-linkedin"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use></svg></li>
-        <li class="mail" data-subject="Subject" data-body="Body">share by email</li>
-    </ul>
-</div>
 
 <!-- Loading Progress Bar -->
 <div class="progress-bar blue"></div>
