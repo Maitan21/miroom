@@ -33,9 +33,10 @@
 |    Spring    |    Spring Boot 2.3.4.RELEASE   |
 |      OS      |            Mac OS X / Windows 10             |
 |   개발 툴    | Intellij IDEA Ultimate 2020. 02 |
-|     JDK      |             JDK 13 (13.0.2)              |
+|     JDK      |             JDK 11               |
 | 데이터베이스 |               AWS RDS (MySQL 8.0.20)                |
 |   빌드 툴    |          Maven 2.5.1           |
+|   패키지    |          WAR           |
 
 ## 의존성
 
