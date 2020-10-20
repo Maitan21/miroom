@@ -628,21 +628,21 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="/dashboard/roomtable">
                                     <!-- 회의실 명 -->
                                     <div class="form-group">
                                         <label for="roomName">회의실명</label>
-                                        <input type="email" class="form-control" id="roomName" placeholder="회의실명 입력">
+                                        <input type="text" class="form-control" id="roomName" placeholder="회의실명 입력" required="">
                                     </div>
                                     <!-- 회의실 위치 -->
                                     <div class="form-group">
-                                        <label for="roomlocation">회의실 위치</label>
-                                        <input type="email" class="form-control" id="roomLocation" placeholder="회의실 위치 입력">
+                                        <label for="roomLocation">회의실 위치</label>
+                                        <input type="text" class="form-control" id="roomLocation" placeholder="회의실 위치 입력" required="">
                                     </div>
                                     <!-- 회의실 사이즈 -->
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">방 사이즈 / 인원</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <label for="selectSize">방 사이즈 / 인원</label>
+                                        <select class="form-control" id="selectSize">
                                             <option>소 (2~4명)</option>
                                             <option>중 (5~8명)</option>
                                             <option>대 (9~12명)</option>
@@ -659,16 +659,17 @@
                                         </div>
                                     </div>
                                     <!-- 셀렉터 모듈 -->
+
                                     <div class="form-group">
-                                        <select multiple data-placeholder="Add tools">
-                                            <option selected>WiFi</option>
-                                            <option>프로젝터</option>
-                                            <option>보드 / 칠판</option>
+                                        <select id="features" multiple data-placeholder="Add tools">
+                                            <option value ="wifi" selected>WiFi</option>
+                                            <option value ="projector">프로젝터</option>
+                                            <option value ="board">보드 / 칠판</option>
                                         </select>
                                     </div>
                                     <div>
-                                        <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
-                                            <span class="text">추 가</span></a>
+                                        <button class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                            <span class="text">추 가</span></button>
                                     </div>
                                 </form>
                             </div>

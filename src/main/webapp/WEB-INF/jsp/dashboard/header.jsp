@@ -7,7 +7,6 @@
 <html lang="en">
 
 <head>
-
   <!--Meta tag Setting-->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta property="og:title" content="M I R O O M"/>

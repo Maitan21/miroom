@@ -43,7 +43,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/chart">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>통계</span>
+                <span>차트</span>
             </a>
         </li>
 
