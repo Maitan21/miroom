@@ -171,63 +171,27 @@
                                     <th>예약 번호</th>
                                     <th>예약자</th>
                                     <th>회의실</th>
-                                    <th>예약 날짜</th>
                                     <th>예약 시간</th>
                                     <th>전화번호</th>
-                                    <th>비고</th>
                                     <th>Detail</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">1</a></td>
-                                    <td>조윤상</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> - </td>
-                                    <td>
-                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
-                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
-                                            상세 보기
-                                        </a>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">2</a></td>
-                                    <td>권세기</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>15:30 ~ 16:30</td>
-                                    <td>010-111-1111</td>
-                                    <td> 테스트 </td>
-                                    <td>
-                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
-                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
-                                            상세 보기
-                                        </a>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">3</a></td>
-                                    <td>홍길동</td>
-                                    <td>대합실</td>
-                                    <td>2020/10/16</td>
-                                    <td>12:30 ~ 16:30</td>
-                                    <td>010-134-1111</td>
-                                    <td> 깃허브 </td>
-                                    <td>
-                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
-                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
-                                            상세 보기
-                                        </a>
-
-                                    </td>
-                                </tr>
-
+                                <c:forEach var = "item" items="${list[1]}" varStatus="no">
+                                    <tr>
+                                        <td><a href="#">${item.reserve_id}</a></td>
+                                        <td><c:out value="${item.reserver_name}"></c:out></td>
+                                        <td><c:out value="${item.room_name}"></c:out></td>
+                                        <td><c:out value="${item.check_in} ~ ${item.check_out}"></c:out></td>
+                                        <td><c:out value="${item.reserver_phone}"></c:out> </td>
+                                        <td>
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                                <c:set var="modalint[]" value = "${item.room_name}"/>
+                                                상세 보기
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
 
                                 </tbody>
                             </table>

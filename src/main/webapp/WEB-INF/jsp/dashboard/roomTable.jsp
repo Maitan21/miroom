@@ -515,8 +515,9 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>회의실</th>
+                                    <th>위치</th>
                                     <th>사이즈</th>
-                                    <th>상태</th>
+                                    <th>인원</th>
                                     <th>Detail</th>
                                 </tr>
                                 </thead>
@@ -524,26 +525,14 @@
                                 <c:set var="cntAble" value = "0"  />
                                 <c:forEach var = "item" items="${list[0]}" varStatus="no">
                                     <tr>
-                                        <td><a href="#">${no.count}</a></td>
-                                        <td><c:out value="${item.ROOM_NAME}"></c:out></td>
-                                        <td><c:out value="${item.SIZE}"></c:out></td>
-                                        <c:choose>
-                                            <c:when test="${item.STATUS == 0}">
-                                                <td><span class="badge badge-success">이용가능</span></td>
-                                            </c:when>
-                                            <c:when test="${item.STATUS == 1}">
-                                                <td><span class="badge badge-info">예약됨</span></td>
-                                            </c:when>
-                                            <c:when test="${item.STATUS == 2}">
-                                                <td><span class="badge badge-warning">이용중</span></td>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <td><span class="badge badge-danger">이용불가</span></td>
-                                            </c:otherwise>
-                                        </c:choose>
+                                        <td><a href="#">${item.room_id}</a></td>
+                                        <td><c:out value="${item.room_name}"></c:out></td>
+                                        <td><c:out value="${item.size}"></c:out></td>
+                                        <td><c:out value="${item.location}"></c:out></td>
+                                        <td> - </td>
                                         <td>
                                             <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
-                                            <c:set var="modalint[]" value = "${item.ROOM_NAME}"/>
+                                            <c:set var="modalint[]" value = "${item.room_name}"/>
                                             상세 보기
                                         </a>
 
@@ -574,7 +563,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="py-3" ><img src="/static/handler/img/home/room5.jpg" width="80%" class="rounded-lg">
-                                        <h4 class="text-secondary "><br>${name.ROOM_NAME}</h4>
+                                        <h4 class="text-secondary "><br>${name.room_name}</h4>
                                         <div class="allergy"><span></span></div>
                                         <div class="stats">
                                             <table class="table table-borderless">

@@ -14,9 +14,9 @@ public class BoardServiceImpl implements BoardService{
     private BoardMapper boardMapper;
 
     @Override
-    public List<BoardVO> selectRoomList(String username) throws Exception {
+    public List<BoardVO> selectRoomList() throws Exception {
 
-        return boardMapper.selectRoomList(username);
+        return boardMapper.selectRoomList();
 
     }
 

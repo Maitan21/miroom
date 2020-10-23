@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.kr.miroom.board.mapper.BoardMapper">
 
-    <select id="selectRoomList" parameterType="String" resultType="co.kr.miroom.board.vo.BoardVO">
+    <!--<select id="selectRoomList" parameterType="String" resultType="co.kr.miroom.board.vo.BoardVO">
         select ROOM_NAME, FACILITY, SIZE, CAPACITY, STATUS from manager Left join room on NAME = room.FACILITY WHERE manager.ID= #{username}
+    </select> -->
+
+    <select id="selectRoomList" parameterType="String" resultType="co.kr.miroom.board.vo.BoardVO">
+        select * from room;
     </select>
 </mapper>

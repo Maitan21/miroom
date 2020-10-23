@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.kr.miroom.board.mapper.ReservationMapper">
+
+    <select id="selectReservationList" parameterType="String" resultType="co.kr.miroom.board.vo.ReservationVO">
+         select reserve_id, reserver_name, reserver_phone, room_name, check_in, check_out, room.room_id AS room_id, reserver.reserver_id AS reserver_id from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id;
+    </select>
+</mapper>
+

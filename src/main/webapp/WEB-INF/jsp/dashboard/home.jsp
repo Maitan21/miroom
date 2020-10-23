@@ -315,22 +315,9 @@
                           <tbody>
                           <c:forEach var = "item" items="${list[0]}">
                             <tr>
-                              <td><c:out value="${item.ROOM_NAME}"></c:out></td>
-                              <td><c:out value="${item.SIZE}"></c:out></td>
-                                <c:choose>
-                                  <c:when test="${item.STATUS == 0}">
-                                    <td><span class="badge badge-success">이용가능</span></td>
-                                  </c:when>
-                                  <c:when test="${item.STATUS == 1}">
-                                    <td><span class="badge badge-info">예약됨</span></td>
-                                  </c:when>
-                                  <c:when test="${item.STATUS == 2}">
-                                    <td><span class="badge badge-warning">이용중</span></td>
-                                  </c:when>
-                                  <c:otherwise>
-                                    <td><span class="badge badge-danger">이용불가</span></td>
-                                  </c:otherwise>
-                                </c:choose>
+                              <td><c:out value="${item.room_name}"></c:out></td>
+                              <td><c:out value="${item.size}"></c:out></td>
+                              <td> - </td>
                               <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                             </tr>
                           </c:forEach>

@@ -1,7 +1,9 @@
 package co.kr.miroom.board.controller;
 
 import co.kr.miroom.board.service.BoardService;
+import co.kr.miroom.board.service.ReservationService;
 import co.kr.miroom.board.vo.BoardVO;
+import co.kr.miroom.board.vo.ReservationVO;
 import co.kr.miroom.manager.vo.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,6 +22,9 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+    @Autowired
+    private ReservationService reservationService;
+
     //TODO Main
     @RequestMapping("/dashboard/home")
     public ModelAndView ViewHome(Authentication authentication) throws Exception{
@@ -32,11 +37,9 @@ public class BoardController {
         ArrayList<Object> list = new ArrayList<Object>();
 
         //list 1 : 방목록
-        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
 
-
-        //list 2 : 통계값
 
 
         //전달
@@ -57,11 +60,8 @@ public class BoardController {
         ArrayList<Object> list = new ArrayList<Object>();
 
         //list 1 : 방목록
-        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
-
-        //list 2 : 통계값
-
 
         //전달
         mv.addObject("list",list);
@@ -81,10 +81,8 @@ public class BoardController {
         ArrayList<Object> list = new ArrayList<Object>();
 
         //list 1 : 방목록
-        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
-
-        //list 2 : 통계값
 
 
         //전달
@@ -105,10 +103,12 @@ public class BoardController {
         ArrayList<Object> list = new ArrayList<Object>();
 
         //list 1 : 방목록
-        List<BoardVO> room = boardService.selectRoomList(userVO.getUsername());
+        List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
 
-        //list 2 : 통계값
+        //list 2 : 예약자리스트
+        List<ReservationVO> reservations = reservationService.selectReservationList();
+        list.add(reservations);
 
 
         //전달
@@ -120,8 +120,26 @@ public class BoardController {
 
     //TODO 예약현황
     @RequestMapping("/dashboard/reservationtable")
-    public String reservationTable() {
-        return "/dashboard/reservationTable";
+    public ModelAndView reservationTable(Authentication authentication) throws Exception {
+
+        ModelAndView mv = new ModelAndView("/dashboard/reservationTable");
+
+        //최종 전달할 객체
+        ArrayList<Object> list = new ArrayList<Object>();
+
+        //list 1 : 방목록
+        List<BoardVO> room = boardService.selectRoomList();
+        list.add(room);
+
+        //list 2 : 예약자리스트
+        List<ReservationVO> reservations = reservationService.selectReservationList();
+        list.add(reservations);
+
+
+        //전달
+        mv.addObject("list",list);
+
+        return mv;
     }
 
     //TODO 차트

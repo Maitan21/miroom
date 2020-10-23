@@ -8,5 +8,5 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
 
-    List<BoardVO> selectRoomList(String username) throws Exception;
+    List<BoardVO> selectRoomList() throws Exception;
 }

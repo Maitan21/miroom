@@ -14,6 +14,9 @@ public class CustomUserDetails implements UserDetails {
     private String AUTHORITY;
     private boolean ENABLED;
     private String NAME;
+    private String FACILITY;
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -57,5 +60,13 @@ public class CustomUserDetails implements UserDetails {
 
     public void setNAME(String name) {
         NAME = name;
+    }
+
+    public String getFACILITY() {
+        return FACILITY;
+    }
+
+    public void setFACILITY(String FACILITY) {
+        this.FACILITY = FACILITY;
     }
 }
