@@ -5,21 +5,17 @@ import java.util.Date;
 
 public class ReservationVO {
     private int reserve_id;
-    private Date check_in;
-    private Date check_out;
+    private String check_in_Date;
+    private String check_in_Hour;
+    private String check_in_Min;
+    private String check_out_Date;
+    private String check_out_Hour;
+    private String check_out_Min;
     private String reserver_name;
     private String reserver_phone;
     private String room_name;
     private int room_id;
     private int reserver_id;
-
-    public String getRoom_name() {
-        return room_name;
-    }
-
-    public void setRoom_name(String room_name) {
-        this.room_name = room_name;
-    }
 
     public int getReserve_id() {
         return reserve_id;
@@ -29,20 +25,52 @@ public class ReservationVO {
         this.reserve_id = reserve_id;
     }
 
-    public Date getCheck_in() {
-        return check_in;
+    public String getCheck_in_Date() {
+        return check_in_Date;
     }
 
-    public void setCheck_in(Date check_in) {
-        this.check_in = check_in;
+    public void setCheck_in_Date(String check_in_Date) {
+        this.check_in_Date = check_in_Date;
     }
 
-    public Date getCheck_out() {
-        return check_out;
+    public String getCheck_in_Hour() {
+        return check_in_Hour;
     }
 
-    public void setCheck_out(Date check_out) {
-        this.check_out = check_out;
+    public void setCheck_in_Hour(String check_in_Hour) {
+        this.check_in_Hour = check_in_Hour;
+    }
+
+    public String getCheck_in_Min() {
+        return check_in_Min;
+    }
+
+    public void setCheck_in_Min(String check_in_Min) {
+        this.check_in_Min = check_in_Min;
+    }
+
+    public String getCheck_out_Date() {
+        return check_out_Date;
+    }
+
+    public void setCheck_out_Date(String check_out_Date) {
+        this.check_out_Date = check_out_Date;
+    }
+
+    public String getCheck_out_Hour() {
+        return check_out_Hour;
+    }
+
+    public void setCheck_out_Hour(String check_out_Hour) {
+        this.check_out_Hour = check_out_Hour;
+    }
+
+    public String getCheck_out_Min() {
+        return check_out_Min;
+    }
+
+    public void setCheck_out_Min(String check_out_Min) {
+        this.check_out_Min = check_out_Min;
     }
 
     public String getReserver_name() {
@@ -59,6 +87,14 @@ public class ReservationVO {
 
     public void setReserver_phone(String reserver_phone) {
         this.reserver_phone = reserver_phone;
+    }
+
+    public String getRoom_name() {
+        return room_name;
+    }
+
+    public void setRoom_name(String room_name) {
+        this.room_name = room_name;
     }
 
     public int getRoom_id() {

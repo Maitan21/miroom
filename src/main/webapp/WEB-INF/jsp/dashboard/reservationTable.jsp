@@ -171,6 +171,7 @@
                                     <th>예약 번호</th>
                                     <th>예약자</th>
                                     <th>회의실</th>
+                                    <th>예약 날짜</th>
                                     <th>예약 시간</th>
                                     <th>전화번호</th>
                                     <th>Detail</th>
@@ -182,7 +183,8 @@
                                         <td><a href="#">${item.reserve_id}</a></td>
                                         <td><c:out value="${item.reserver_name}"></c:out></td>
                                         <td><c:out value="${item.room_name}"></c:out></td>
-                                        <td><c:out value="${item.check_in} ~ ${item.check_out}"></c:out></td>
+                                        <td><c:out value="${item.check_in_Date}"></c:out></td>
+                                        <td><c:out value="${item.check_in_Hour} : ${item.check_in_Min} ~ ${item.check_out_Hour} : ${item.check_out_Min}"></c:out></td>
                                         <td><c:out value="${item.reserver_phone}"></c:out> </td>
                                         <td>
                                             <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">

@@ -3,7 +3,21 @@
 <mapper namespace="co.kr.miroom.board.mapper.ReservationMapper">
 
     <select id="selectReservationList" parameterType="String" resultType="co.kr.miroom.board.vo.ReservationVO">
-         select reserve_id, reserver_name, reserver_phone, room_name, check_in, check_out, room.room_id AS room_id, reserver.reserver_id AS reserver_id from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id;
+         select reserve_id, reserver_name,
+         ifnull(CASE CHAR_LENGTH(reserver_phone)
+         WHEN '11' Then concat(LEFT(reserver_phone,3),'-',SUBSTRING(reserver_phone,4,4),'-',RIGHT(reserver_phone,4))
+		 WHEN '10' Then concat(LEFT(reserver_phone,3),'-',SUBSTRING(reserver_phone,4,3),'-',RIGHT(reserver_phone,4))
+         END, '없음') as 'reserver_phone',
+         room_name,
+         date_format(check_in, '%Y / %m / %d') AS check_in_Date,
+         date_format(check_in, '%H') AS check_in_Hour,
+         date_format(check_in, '%i') AS check_in_Min,
+         date_format(check_out, '%Y / %m / %d') AS check_out_Date,
+         date_format(check_out, '%H') AS check_out_Hour,
+         date_format(check_out, '%i') AS check_out_Min,
+         room.room_id AS room_id,
+         reserver.reserver_id AS reserver_id
+         from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id;
     </select>
 </mapper>
 
