@@ -84,6 +84,10 @@ public class BoardController {
         List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
 
+        //list 2 : 예약자리스트
+        List<ReservationVO> reservations = reservationService.selectReservationList();
+        list.add(reservations);
+
 
         //전달
         mv.addObject("list",list);

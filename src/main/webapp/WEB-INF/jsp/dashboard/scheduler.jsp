@@ -263,72 +263,22 @@
 <script type="text/javascript">
     // --------------------------- Data --------------------------------
     var locations = [
-        {id: '1', name: '잉여실'},
-        {id: '2', name: '숙취실'},
-        {id: '3', name: '취조실'},
-        {id: '5', name: '경비실'},
-        {id: '6', name: '잡담실'},
     ];
-    var events = [
-        {
-            name: '종프1',
-            location: '1',
-            start: today(12, 0),
-            end: today(13, 30)
-        },
+    <c:forEach var = "item" items="${list[0]}">
+    locations.push({id:'${item.room_id}', name: '${item.room_name}'});
+    </c:forEach>
 
-        {
-            name: '종프2',
-            location: '1',
-            start: today(09, 0),
-            end: today(11, 30)
-    },
-    {
-        name: 'Meeting with custom class',
-            location: '2',
-        start: today(21, 0),
-        end: today(22, 30),
-    },
-    {
-        name: '제이솔루션',
-            location: '2',
-        start: today(13, 45),
-        end: today(18, 45),
-        class: 'custom-class'
-    },
-    {
-        name: 'And another one...',
-            location: '2',
-        start: today(3, 10),
-        end: today(5, 30),
-        class: 'custom-class'
-    },
-    {
-        name: 'Disabled meeting',
-            location: '3',
-        start: today(20, 15),
-        end: today(21, 30),
-        disabled: true /*락*/
-    },
-    {
-        name: 'Meeting',
-            location: '3',
-        start: yesterday(23, 45),
-        end: today(1, 30)
-    },
-    {
-        name: 'Meeting that started early',
-            location: '6',
-        start: yesterday(21, 45),
-        end: today(0, 45)
-    },
-    {
-        name: 'Late meeting',
-            location　: '5',
-        start: today(11, 15),
-        end: today(13, 45)
-    },
-    ];
+    var events=[];
+    <c:forEach var = "reserve" items="${list[1]}">
+    events.push( {
+        name: '${reserve.room_name}',
+        location: '${reserve.room_id}',
+        start: today(Number(${reserve.check_in_Hour}), Number(${reserve.check_in_Min})),
+        end: today(Number(${reserve.check_out_Hour}),Number(${reserve.check_out_Min}))
+    });
+    </c:forEach>
+
+
     // -------------------------- Helpers ------------------------------
     function today(hours, minutes) {
         var date = new Date();
