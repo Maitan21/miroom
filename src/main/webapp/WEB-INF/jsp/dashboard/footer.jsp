@@ -14,7 +14,6 @@
 <script src="/static/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
 <!--<script src="/saatic/dash/js/ruang-admin.min.js"></script>-->
 <!-- Page level plugins -->
-<script src="/static/dash/vendor/select2/dist/js/select2.min.js"></script>
 <script src="/static/dash/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="/static/dash/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 

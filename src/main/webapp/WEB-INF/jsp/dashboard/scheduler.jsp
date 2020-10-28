@@ -271,13 +271,12 @@
     var events=[];
     <c:forEach var = "reserve" items="${list[1]}">
     events.push( {
-        name: '${reserve.room_name}',
+        name: '${reserve.reserver_name}',
         location: '${reserve.room_id}',
         start: today(Number(${reserve.check_in_Hour}), Number(${reserve.check_in_Min})),
         end: today(Number(${reserve.check_out_Hour}),Number(${reserve.check_out_Min}))
     });
     </c:forEach>
-
 
     // -------------------------- Helpers ------------------------------
     function today(hours, minutes) {
