@@ -262,20 +262,19 @@
 <script src="/static/dash/js/jquery.skedTape.js"></script>
 <script type="text/javascript">
     // --------------------------- Data --------------------------------
-    var locations = [
-    ];
-    <c:forEach var = "item" items="${list[0]}">
+    var locations = []; //넣을 위치 객체 선언
+    <c:forEach var = "item" items="${list[0]}"> //반복문 돌면서 push
     locations.push({id:'${item.room_id}', name: '${item.room_name}'});
     </c:forEach>
 
-    var events=[];
+    var events=[]; // 이벤트 객체 선언
     <c:forEach var = "reserve" items="${list[1]}">
     events.push( {
         name: '${reserve.reserver_name}',
         location: '${reserve.room_id}',
         start: today(Number(${reserve.check_in_Hour}), Number(${reserve.check_in_Min})),
         end: today(Number(${reserve.check_out_Hour}),Number(${reserve.check_out_Min}))
-    });
+    }); // 반복문 돌면서 Data push
     </c:forEach>
 
     // -------------------------- Helpers ------------------------------
@@ -295,7 +294,7 @@
         date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
         return date;
     }
-    // --------------------------- Example 2 ---------------------------
+    // --------------------------- schelduer label ---------------------------
     var sked2Config = {
         caption: '회의실 명',
         start: today(9, 0),
