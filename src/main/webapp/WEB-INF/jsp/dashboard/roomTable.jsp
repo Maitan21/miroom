@@ -570,18 +570,18 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>
-                                                        <div class="d-flex flex-column"> <span class="text-center head">방 크기</span> <span class="text-center bottom">중</span> </div>
+                                                        <div class="d-flex flex-column"> <span class="text-center head">방 크기</span> <span class="text-center bottom">${name.size}</span> </div>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex flex-column"> <span class="text-center head">허용 인원</span> <span class="text-center bottom">2~4 명</span> </div>
+                                                        <div class="d-flex flex-column"> <span class="text-center head">허용 인원</span> <span class="text-center bottom">${name.capacity} 명</span> </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">별관 4F</span> </div>
+                                                        <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">${name.location}</span> </div>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex flex-column"> <span class="text-center head">비고</span> <span class="text-center bottom">WiFi</span></div>
+                                                        <div class="d-flex flex-column"> <span class="text-center head">특징</span> <span class="text-center bottom">${name.feature}</span></div>
                                                     </td>
                                                 </tr>
                                                 </tbody>
