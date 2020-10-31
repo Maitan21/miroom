@@ -187,7 +187,7 @@
                                         <td><c:out value="${item.check_in_Hour} : ${item.check_in_Min} ~ ${item.check_out_Hour} : ${item.check_out_Min}"></c:out></td>
                                         <td><c:out value="${item.reserver_phone}"></c:out> </td>
                                         <td>
-                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#ReserveInfo${item.reserve_id}" class="btn btn-sm btn-primary">
                                                 <c:set var="modalint[]" value = "${item.room_name}"/>
                                                 상세 보기
                                             </a>
@@ -200,6 +200,62 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 모달 인포 -->
+                <c:forEach var="name" items="${list[1]}" varStatus="status">
+                    <div class="modal fade" id="ReserveInfo${name.reserve_id}" tabindex="-1" role="dialog" aria-labelledby="ReservationInfo"
+                         aria-hidden="true">
+                        <div class="text-center">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="RoomDetails">예약 정보</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="py-3" ><img src="/static/handler/img/home/room5.jpg" width="80%" class="rounded-lg">
+                                            <h4 class="text-secondary "><br>${name.room_name}</h4>
+                                            <div class="allergy"><span></span></div>
+                                            <div class="stats">
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">방 크기</span> <span class="text-center bottom">중</span> </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">허용 인원</span> <span class="text-center bottom">2~4 명</span> </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">별관 4F</span> </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">비고</span> <span class="text-center bottom">WiFi</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                            <span class="text">수정</span>
+                                        </a>
+                                        <a href="#" class="btn btn-danger btn-icon-split"><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
+                                            <span class="text">삭제</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </c:forEach>
 
 
                 <!-- 모달 로그아웃 -->
