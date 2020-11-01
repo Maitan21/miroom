@@ -162,11 +162,8 @@
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">예약 현황</h6>
                             <div class="row" >
-                                <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
-                                    <span class="text">수정</span>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-icon-split"><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                    <span class="text">삭제</span>
+                                <a class="m-0 float-right btn btn-success btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#ReservationAdd">추가 &nbsp<i
+                                        class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -260,8 +257,55 @@
                             </div>
                         </div>
                     </div>
-
                 </c:forEach>
+
+                <!-- 추가(Add) 모달-->
+                <div class="modal fade" id="ReservationAdd" tabindex="-1" role="dialog"
+                     aria-hidden="true">
+                    <div>
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="Roo">예약 추가</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="get">
+                                        <!-- 예약자명-->
+                                        <div class="form-group">
+                                            <label for="roomName">예약자명</label>
+                                            <input type="text" class="form-control" id="roomName" placeholder="예) 홍길동" required="">
+                                        </div>
+                                        <!-- 예약자 전화번호-->
+                                        <div class="form-group">
+                                            <label for="roomlocation">예약자 전화번호</label>
+                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" required="">
+                                        </div>
+                                        <!-- 회의실 -->
+                                        <div class="form-group">
+                                            <label for="selectRoom">회의실 선택</label>
+                                            <select class="form-control" id="selectRoom" required="">
+                                                <c:forEach var = "room" items="${list[0]}" varStatus="no">
+                                                <option value="${room.room_id}">${room.room_name}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </div>
+
+                                        <!-- TODO -->
+                                        <!-- 시간 설정 UI-->
+
+                                        <div>
+                                            <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                                <span class="text">추 가</span></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <!-- 모달 로그아웃 -->
