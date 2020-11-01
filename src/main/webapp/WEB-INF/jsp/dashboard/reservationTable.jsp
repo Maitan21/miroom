@@ -281,13 +281,13 @@
                                         <!-- 예약자 전화번호-->
                                         <div class="form-group">
                                             <label for="roomlocation">예약자 전화번호</label>
-                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" required="">
+                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                                         </div>
                                         <!-- 회의실 -->
                                         <div class="form-group">
                                             <label for="selectRoom">회의실 선택</label>
                                             <select class="form-control" id="selectRoom" required="">
-                                                <c:forEach var = "room" items="${list[0]}" varStatus="no">
+                                                <c:forEach var = "room" items="${list[0]}">
                                                 <option value="${room.room_id}">${room.room_name}</option>
                                                 </c:forEach>
                                             </select>
@@ -297,8 +297,7 @@
                                         <!-- 시간 설정 UI-->
 
                                         <div>
-                                            <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
-                                                <span class="text">추 가</span></a>
+                                            <input type="submit"  value ="추가" class="btn btn-success btn-icon-split " style="width:80px; height: 40px; margin-right: 10px; text-align: center;">
                                         </div>
                                     </form>
                                 </div>
