@@ -517,8 +517,8 @@
                                     <th>회의실</th>
                                     <th>위치</th>
                                     <th>사이즈</th>
-                                    <th>인원</th>
-                                    <th>Detail</th>
+                                    <th>상태</th>
+                                    <th>상세</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -617,26 +617,32 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form method="get">
                                     <!-- 회의실 명 -->
                                     <div class="form-group">
                                         <label for="roomName">회의실명</label>
-                                        <input type="email" class="form-control" id="roomName" placeholder="회의실명 입력">
+                                        <input type="text" class="form-control" id="roomName" placeholder="회의실명 입력" required="">
                                     </div>
                                     <!-- 회의실 위치 -->
                                     <div class="form-group">
                                         <label for="roomlocation">회의실 위치</label>
-                                        <input type="email" class="form-control" id="roomLocation" placeholder="회의실 위치 입력">
+                                        <input type="text" class="form-control" id="roomLocation" placeholder="회의실 위치 입력" required="">
                                     </div>
                                     <!-- 회의실 사이즈 -->
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">방 사이즈 / 인원</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>소 (2~4명)</option>
-                                            <option>중 (5~8명)</option>
-                                            <option>대 (9~12명)</option>
-                                            <option>특대 (12 명이상)</option>
+                                        <label for="selectSize">방 사이즈</label>
+                                        <select class="form-control" id="selectSize" required="">
+                                            <option>소</option>
+                                            <option>중</option>
+                                            <option>대</option>
+                                            <option>특대</option>
                                         </select>
+                                    </div>
+
+                                    <!-- 회의실 인원 -->
+                                    <div class="form-group">
+                                        <label for="selectCapacity">입장가능 인원</label>
+                                        <input type="number" class="form-control" id="selectCapacity" min="0" placeholder="입장가능 인원 입력" required="">
                                     </div>
 
                                     <!-- 사진 불러오기 모뮬 -->

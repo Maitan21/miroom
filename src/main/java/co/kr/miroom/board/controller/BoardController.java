@@ -29,8 +29,7 @@ public class BoardController {
     @RequestMapping("/dashboard/home")
     public ModelAndView ViewHome(Authentication authentication) throws Exception{
 
-        UserDetails userVO = (UserDetails) authentication.getPrincipal();
-        System.out.println("ID정보 : " + userVO.getUsername());
+        // UserDetails userVO = (UserDetails) authentication.getPrincipal(); //login session info
         ModelAndView mv = new ModelAndView("/dashboard/home");
 
         //최종 전달할 객체
@@ -52,8 +51,7 @@ public class BoardController {
     @RequestMapping("/dashboard/roomtable")
     public ModelAndView RoomTable(Authentication authentication) throws Exception{
 
-        UserDetails userVO = (UserDetails) authentication.getPrincipal();
-        System.out.println("ID정보 : " + userVO.getUsername());
+        // UserDetails userVO = (UserDetails) authentication.getPrincipal(); //login session info
         ModelAndView mv = new ModelAndView("/dashboard/roomTable");
 
         //최종 전달할 객체
@@ -73,8 +71,7 @@ public class BoardController {
     @RequestMapping("/dashboard/scheduler")
     public ModelAndView scheduler(Authentication authentication) throws Exception{
 
-        UserDetails userVO = (UserDetails) authentication.getPrincipal();
-        System.out.println("ID정보 : " + userVO.getUsername());
+        // UserDetails userVO = (UserDetails) authentication.getPrincipal(); //login session info
         ModelAndView mv = new ModelAndView("/dashboard/scheduler");
 
         //최종 전달할 객체
@@ -99,8 +96,7 @@ public class BoardController {
     @RequestMapping("/dashboard/setting")
     public ModelAndView setting(Authentication authentication) throws Exception{
 
-        UserDetails userVO = (UserDetails) authentication.getPrincipal();
-        System.out.println("ID정보 : " + userVO.getUsername());
+        // UserDetails userVO = (UserDetails) authentication.getPrincipal(); //login session info
         ModelAndView mv = new ModelAndView("/dashboard/setting");
 
         //최종 전달할 객체
