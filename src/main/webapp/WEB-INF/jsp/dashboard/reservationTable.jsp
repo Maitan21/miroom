@@ -2,6 +2,12 @@
          pageEncoding="UTF-8"%>
 <%@ include file = "header.jsp" %>
 <link href="/static/dash/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<style>
+    .head{
+        color: #97989a;
+        font-size: 12px
+    }
+</style>
 </head>
 <body id="page-top">
 <div id="wrapper">
