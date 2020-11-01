@@ -384,4 +384,53 @@
     </div>
 </div>
 
-<%@ include file = "footer.jsp" %>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+<!--find script-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/static/dash/js/ruang-admin.min.js"></script>
+<script src="/static/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Page level plugins -->
+<script src="/static/dash/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/static/dash/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!--DateAndClockpicker plugins -->
+<script src="/static/dash/vendor/clock-picker/clockpicker.js"></script>
+<script src="/static/dash/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<!-- 맨뒤로 배치 안하면 안됨 -->
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable(); // ID From dataTable
+        $('#dataTableHover').DataTable( {
+            "language": {
+                "lengthMenu": "_MENU_ 개씩 보기",
+                "info": "",
+                "search": "검색어 : _INPUT_"
+            }
+        } ); // ID From dataTable with Hover
+
+        $('#check-minutes').click(function(e){
+            e.stopPropagation();
+            input.clockpicker('show').clockpicker('toggleView', 'minutes');
+        });
+
+        $('#checkin').clockpicker({
+            autoclose: true
+        });
+        $('#checkout').clockpicker({
+            autoclose: true
+        });
+
+        $('#ReservationDate .input-group.date').datepicker({
+            format: 'dd/mm/yyyy',
+            todayBtn: 'linked',
+            todayHighlight: true,
+            autoclose: true,
+        });
+
+    });
+</script>
+
+</body>
+</html>
