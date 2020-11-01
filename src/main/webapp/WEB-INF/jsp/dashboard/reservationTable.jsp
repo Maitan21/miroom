@@ -174,7 +174,7 @@
                                     <th>예약 날짜</th>
                                     <th>예약 시간</th>
                                     <th>전화번호</th>
-                                    <th>Detail</th>
+                                    <th>상세</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -223,18 +223,18 @@
                                                     <tbody>
                                                     <tr>
                                                         <td>
-                                                            <div class="d-flex flex-column"> <span class="text-center head">방 크기</span> <span class="text-center bottom">중</span> </div>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name}</span> </div>
                                                         </td>
                                                         <td>
-                                                            <div class="d-flex flex-column"> <span class="text-center head">허용 인원</span> <span class="text-center bottom">2~4 명</span> </div>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">예약자 폰번호</span> <span class="text-center bottom">${name.reserver_phone}</span> </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">별관 4F</span> </div>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">예약 시간</span> <span class="text-center bottom">${name.check_in_Date}<br> ${name.check_in_Hour} : ${name.check_in_Min} ~ ${name.check_out_Hour} : ${name.check_out_Min}</span> </div>
                                                         </td>
                                                         <td>
-                                                            <div class="d-flex flex-column"> <span class="text-center head">비고</span> <span class="text-center bottom">WiFi</span></div>
+                                                            <div class="d-flex flex-column"> <span class="text-center head">예약 번호</span> <span class="text-center bottom">${name.reserve_id}</span></div>
                                                         </td>
                                                     </tr>
                                                     </tbody>
