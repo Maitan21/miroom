@@ -2,6 +2,8 @@
          pageEncoding="UTF-8"%>
 <%@ include file = "header.jsp" %>
 <link href="/static/dash/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<link href="/static/dash/vendor/clock-picker/clockpicker.css" rel="stylesheet">
+<link href="/static/dash/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" >
 <style>
     .head{
         color: #97989a;
@@ -49,7 +51,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/chart">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>통계</span>
+                <span>차트</span>
             </a>
         </li>
 
@@ -281,13 +283,13 @@
                                         <!-- 예약자 전화번호-->
                                         <div class="form-group">
                                             <label for="roomlocation">예약자 전화번호</label>
-                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"">
                                         </div>
                                         <!-- 회의실 -->
                                         <div class="form-group">
                                             <label for="selectRoom">회의실 선택</label>
                                             <select class="form-control" id="selectRoom" required="">
-                                                <c:forEach var = "room" items="${list[0]}">
+                                                <c:forEach var = "room" items="${list[0]}" varStatus="no">
                                                 <option value="${room.room_id}">${room.room_name}</option>
                                                 </c:forEach>
                                             </select>
@@ -295,6 +297,37 @@
 
                                         <!-- TODO -->
                                         <!-- 시간 설정 UI-->
+
+                                        <div class="form-group" id="ReservationDate">
+                                            <label for="DataInput">예약 일자</label>
+                                            <div class="input-group date">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" value="01/06/2020" id="DataInput">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="checkin">시작 시간</label>
+                                            <div class="input-group clockpicker" id="checkin">
+                                                <input type="text" class="form-control" value="12:30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="checkout">종료 시간</label>
+                                            <div class="input-group clockpicker" id="checkout">
+                                                <input type="text" class="form-control" value="12:30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div>
                                             <input type="submit"  value ="추가" class="btn btn-success btn-icon-split " style="width:80px; height: 40px; margin-right: 10px; text-align: center;">

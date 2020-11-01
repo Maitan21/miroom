@@ -9,14 +9,14 @@
 <!--find script-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/static/dash/js/ruang-admin.min.js"></script>
-<!--<script src="/static/dash/vendor/jquery/jquery.min.js"></script>-->
 <script src="/static/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/static/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
-<!--<script src="/saatic/dash/js/ruang-admin.min.js"></script>-->
 <!-- Page level plugins -->
 <script src="/static/dash/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="/static/dash/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
+<!--DateAndClockpicker plugins -->
+<script src="/static/dash/vendor/clock-picker/clockpicker.js"></script>
+<script src="/static/dash/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <!-- 맨뒤로 배치 안하면 안됨 -->
 <script>
     $(document).ready(function () {
@@ -28,6 +28,11 @@
                 "search": "검색어 : _INPUT_"
             }
         } ); // ID From dataTable with Hover
+
+        $('#check-minutes').click(function(e){
+            e.stopPropagation();
+            input.clockpicker('show').clockpicker('toggleView', 'minutes');
+        });
 
         var select = $('select[multiple]');
         var options = select.find('option');
@@ -120,13 +125,25 @@
                 }, 300);
             }, 400);
         });
+        $('#checkin').clockpicker({
+            autoclose: true
+        });
+        $('#checkout').clockpicker({
+            autoclose: true
+        });
+
+        $('#ReservationDate .input-group.date').datepicker({
+            format: 'dd/mm/yyyy',
+            todayBtn: 'linked',
+            todayHighlight: true,
+            autoclose: true,
+        });
 
         $(document).on('click', '.selectMultiple > div .arrow, .selectMultiple > div span', function(e) {
             $(this).parent().parent().toggleClass('open');
         });
     });
 </script>
-
 
 </body>
 </html>
