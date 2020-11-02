@@ -282,8 +282,8 @@
                                         </div>
                                         <!-- 예약자 전화번호-->
                                         <div class="form-group">
-                                            <label for="roomlocation">예약자 전화번호</label>
-                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"">
+                                            <label for="roomLocation">예약자 전화번호</label>
+                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                                         </div>
                                         <!-- 회의실 -->
                                         <div class="form-group">
@@ -294,35 +294,33 @@
                                                 </c:forEach>
                                             </select>
                                         </div>
-
-                                        <!-- TODO -->
-                                        <!-- 시간 설정 UI-->
-
+                                        <!-- 예약일자 -->
                                         <div class="form-group" id="ReservationDate">
-                                            <label for="DataInput">예약 일자</label>
+                                            <label>예약 일자</label>
                                             <div class="input-group date">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" value="01/06/2020" id="DataInput">
+                                                <input type="text" class="form-control" id="Today">
                                             </div>
                                         </div>
 
+                                        <!-- 체크인 시간 -->
                                         <div class="form-group">
-                                            <label for="checkin">시작 시간</label>
+                                            <label for="checkin">체크인</label>
                                             <div class="input-group clockpicker" id="checkin">
-                                                <input type="text" class="form-control" value="12:30">
+                                                <input type="text" class="form-control" id="CheckInTime">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                 </div>
                                             </div>
                                         </div>
 
-
+                                        <!-- 체크아웃 시간 -->
                                         <div class="form-group">
-                                            <label for="checkout">종료 시간</label>
+                                            <label for="checkout">체크아웃</label>
                                             <div class="input-group clockpicker" id="checkout">
-                                                <input type="text" class="form-control" value="12:30">
+                                                <input type="text" class="form-control" id="CheckOutTime">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                 </div>
@@ -399,7 +397,7 @@
 <script src="/static/dash/vendor/clock-picker/clockpicker.js"></script>
 <script src="/static/dash/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <!-- 맨뒤로 배치 안하면 안됨 -->
-<script>
+<script language="javascript">
     $(document).ready(function () {
         $('#dataTable').DataTable(); // ID From dataTable
         $('#dataTableHover').DataTable( {
@@ -430,6 +428,17 @@
         });
 
     });
+
+
+    // 현재 시간
+    window.onload = function(){
+
+        var currentTime = new Date();
+
+        document.getElementById("Today").value=(currentTime.getDate()< 10 ? "0"+currentTime.getDate() : currentTime.getDate())+'/'+(currentTime.getMonth()+1)+'/'+currentTime.getFullYear();
+        document.getElementById("CheckInTime").value = currentTime.getHours()+':'+currentTime.getMinutes();
+        document.getElementById("CheckOutTime").value = currentTime.getHours()+1+':'+currentTime.getMinutes();
+    }
 </script>
 
 </body>

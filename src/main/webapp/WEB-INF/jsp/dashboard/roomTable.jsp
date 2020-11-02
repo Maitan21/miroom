@@ -286,17 +286,17 @@
                                     </div>
                                     <!-- 회의실 위치 -->
                                     <div class="form-group">
-                                        <label for="roomlocation">회의실 위치</label>
+                                        <label for="roomLocation">회의실 위치</label>
                                         <input type="text" class="form-control" id="roomLocation" placeholder="회의실 위치 입력" required="">
                                     </div>
                                     <!-- 회의실 사이즈 -->
                                     <div class="form-group">
                                         <label for="selectSize">방 사이즈</label>
                                         <select class="form-control" id="selectSize" required="">
-                                            <option>소</option>
-                                            <option>중</option>
-                                            <option>대</option>
-                                            <option>특대</option>
+                                            <option value="소">소</option>
+                                            <option value="중">중</option>
+                                            <option value="대">대</option>
+                                            <option value="특대">특대</option>
                                         </select>
                                     </div>
 
@@ -323,8 +323,8 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
-                                            <span class="text">추 가</span></a>
+                                        <input type="submit" value="추가" href="#" class="btn btn-success btn-icon-split" style="width:80px; height: 40px; margin-right: 10px; text-align: center;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                            </input>
                                     </div>
                                 </form>
                             </div>
