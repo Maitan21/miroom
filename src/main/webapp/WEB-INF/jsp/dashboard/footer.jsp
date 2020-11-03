@@ -18,13 +18,6 @@
 <script>
     $(document).ready(function () {
         $('#dataTable').DataTable(); // ID From dataTable
-        $('#dataTableHover').DataTable( {
-            "language": {
-                "lengthMenu": "_MENU_ 개씩 보기",
-                "info": "",
-                "search": "검색어 : _INPUT_"
-            }
-        } ); // ID From dataTable with Hover
 
         var select = $('select[multiple]');
         var options = select.find('option');

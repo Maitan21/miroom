@@ -1,8 +1,9 @@
 package co.kr.miroom.board.vo;
 
+import lombok.Data;
+
+@Data
 public class BoardVO {
-
-
     private int room_id;
     private String room_name;
     private String size;

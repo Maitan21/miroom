@@ -1,8 +1,10 @@
 package co.kr.miroom.board.vo;
 
-import javax.xml.crypto.Data;
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class ReservationVO {
     private int reserve_id;
     private String check_in_Date;
@@ -14,8 +16,17 @@ public class ReservationVO {
     private String reserver_name;
     private String reserver_phone;
     private String room_name;
+    private String Times;
     private int room_id;
     private int reserver_id;
+
+    public String getTimes() {
+        return Times;
+    }
+
+    public void setTimes(String times) {
+        Times = times;
+    }
 
     public int getReserve_id() {
         return reserve_id;

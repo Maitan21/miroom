@@ -1,5 +1,6 @@
 package co.kr.miroom.board.controller;
 
+import co.kr.miroom.board.mapper.ReservationMapper;
 import co.kr.miroom.board.service.BoardService;
 import co.kr.miroom.board.service.ReservationService;
 import co.kr.miroom.board.vo.BoardVO;
@@ -9,10 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.naming.spi.ResolveResult;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -81,8 +89,8 @@ public class BoardController {
         List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
 
-        //list 2 : 예약자리스트
-        List<ReservationVO> reservations = reservationService.selectReservationList();
+        //list 2 : 오늘 예약자
+        List<ReservationVO> reservations = reservationService.ReservationToday();
         list.add(reservations);
 
 
@@ -141,8 +149,32 @@ public class BoardController {
 
         return mv;
     }
+    @RequestMapping(value="/dashboard/newReservation", method = RequestMethod.POST)
+    public String newReservation(Model model, HttpServletRequest request) {
 
-    //TODO 차트
+        Map param = new HashMap();
+        param.put("reserver_name", request.getParameter("ReservationName"));
+        param.put("reserver_phone", request.getParameter("ReservationPhone"));
+
+        reservationService.addReserver(param);
+        String seq = String.valueOf(param.get("reserver_id"));
+        System.out.println(seq);
+
+        Map reservation =  new HashMap();
+
+        String check_in = request.getParameter("Today")+" "+ request.getParameter("CheckInTime");
+        String check_out = request.getParameter("Today")+" "+ request.getParameter("CheckOutTime");
+
+        reservation.put("check_in", check_in);
+        reservation.put("check_out",check_out);
+        reservation.put("room_id",request.getParameter("selectRoom"));
+        reservation.put("reserver_id", param.get("reserver_id"));
+
+        reservationService.addReservation(reservation);
+
+        return "redirect:/dashboard/reservationtable";
+    }
+        //TODO 차트
     @RequestMapping("/dashboard/chart")
     public String chart() {
         return "/dashboard/chart";

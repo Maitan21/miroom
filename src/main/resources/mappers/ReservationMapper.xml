@@ -17,7 +17,41 @@
          date_format(check_out, '%i') AS check_out_Min,
          room.room_id AS room_id,
          reserver.reserver_id AS reserver_id
-         from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id;
+         from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
+         ORDER BY reserve_id DESC;
     </select>
+
+    <select id="ReservationToday" parameterType="String" resultType="co.kr.miroom.board.vo.ReservationVO">
+         select reserve_id, reserver_name,
+         ifnull(CASE CHAR_LENGTH(reserver_phone)
+         WHEN '11' Then concat(LEFT(reserver_phone,3),'-',SUBSTRING(reserver_phone,4,4),'-',RIGHT(reserver_phone,4))
+		 WHEN '10' Then concat(LEFT(reserver_phone,3),'-',SUBSTRING(reserver_phone,4,3),'-',RIGHT(reserver_phone,4))
+         END, '없음') as 'reserver_phone',
+         room_name,
+         date_format(check_in, '%Y / %m / %d') AS check_in_Date,
+         date_format(check_in, '%H') AS check_in_Hour,
+         date_format(check_in, '%i') AS check_in_Min,
+         date_format(check_out, '%Y / %m / %d') AS check_out_Date,
+         date_format(check_out, '%H') AS check_out_Hour,
+         date_format(check_out, '%i') AS check_out_Min,
+         room.room_id AS room_id,
+         reserver.reserver_id AS reserver_id
+         from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
+         WHERE date_format(check_in, '%Y-%m-%d') = CURDATE();
+    </select>
+
+     <insert id="InsertReserver" parameterType="java.util.HashMap">
+        <selectKey resultType="int" keyProperty="reserver_id" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into reserver (reserver_name, reserver_phone)
+        values (#{reserver_name}, #{reserver_phone});
+     </insert>
+
+    <insert id="InsertReservation" parameterType="java.util.HashMap">
+        insert into reservation (check_in, check_out, room_id, reserver_id)
+        values (#{check_in}, #{check_out}, #{room_id}, #{reserver_id});
+    </insert>
+
 </mapper>
 

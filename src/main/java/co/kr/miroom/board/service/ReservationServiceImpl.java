@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -16,8 +17,21 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public List<ReservationVO> selectReservationList() throws Exception {
-
         return reservationMapper.selectReservationList();
+    }
 
+    @Override
+    public List<ReservationVO> ReservationToday() throws Exception {
+        return reservationMapper.ReservationToday();
+    }
+
+    @Override
+    public void addReserver(Map param) {
+        reservationMapper.InsertReserver(param);
+    }
+
+    @Override
+    public void addReservation(Map param) {
+        reservationMapper.InsertReservation(param);
     }
 }

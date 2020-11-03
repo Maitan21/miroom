@@ -274,26 +274,29 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="get">
+                                    <form method="POST" action="/dashboard/newReservation">
                                         <!-- 예약자명-->
                                         <div class="form-group">
-                                            <label for="roomName">예약자명</label>
-                                            <input type="text" class="form-control" id="roomName" placeholder="예) 홍길동" required="">
+                                            <label for="ReservationName">예약자명</label>
+                                            <input type="text" class="form-control" id="ReservationName" name="ReservationName" placeholder="예) 홍길동" required="">
                                         </div>
+
                                         <!-- 예약자 전화번호-->
                                         <div class="form-group">
-                                            <label for="roomLocation">예약자 전화번호</label>
-                                            <input type="text" class="form-control" id="roomLocation" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                            <label for="ReservationPhone">예약자 전화번호</label>
+                                            <input type="text" class="form-control" id="ReservationPhone" name="ReservationPhone" placeholder="예) 01012345678" maxlength='11' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                                         </div>
+
                                         <!-- 회의실 -->
                                         <div class="form-group">
                                             <label for="selectRoom">회의실 선택</label>
-                                            <select class="form-control" id="selectRoom" required="">
+                                            <select class="form-control" id="selectRoom" name="selectRoom" required="">
                                                 <c:forEach var = "room" items="${list[0]}" varStatus="no">
                                                 <option value="${room.room_id}">${room.room_name}</option>
                                                 </c:forEach>
                                             </select>
                                         </div>
+
                                         <!-- 예약일자 -->
                                         <div class="form-group" id="ReservationDate">
                                             <label>예약 일자</label>
@@ -301,15 +304,15 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" id="Today">
+                                                <input type="text" class="form-control" id="Today" name="Today">
                                             </div>
                                         </div>
 
                                         <!-- 체크인 시간 -->
                                         <div class="form-group">
                                             <label for="checkin">체크인</label>
-                                            <div class="input-group clockpicker" id="checkin">
-                                                <input type="text" class="form-control" id="CheckInTime">
+                                            <div class="input-group clockpicker" id="checkin" >
+                                                <input type="text" class="form-control" id="CheckInTime" name="CheckInTime">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                 </div>
@@ -320,7 +323,7 @@
                                         <div class="form-group">
                                             <label for="checkout">체크아웃</label>
                                             <div class="input-group clockpicker" id="checkout">
-                                                <input type="text" class="form-control" id="CheckOutTime">
+                                                <input type="text" class="form-control" id="CheckOutTime" name="CheckOutTime">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                 </div>
@@ -330,6 +333,7 @@
                                         <div>
                                             <input type="submit"  value ="추가" class="btn btn-success btn-icon-split " style="width:80px; height: 40px; margin-right: 10px; text-align: center;">
                                         </div>
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                                     </form>
                                 </div>
                             </div>
@@ -401,6 +405,7 @@
     $(document).ready(function () {
         $('#dataTable').DataTable(); // ID From dataTable
         $('#dataTableHover').DataTable( {
+            "order": [[ 0, "desc" ]],
             "language": {
                 "lengthMenu": "_MENU_ 개씩 보기",
                 "info": "",
@@ -421,7 +426,7 @@
         });
 
         $('#ReservationDate .input-group.date').datepicker({
-            format: 'dd/mm/yyyy',
+            format: 'yyyy-mm-dd',
             todayBtn: 'linked',
             todayHighlight: true,
             autoclose: true,
@@ -429,13 +434,12 @@
 
     });
 
-
     // 현재 시간
     window.onload = function(){
 
         var currentTime = new Date();
 
-        document.getElementById("Today").value=(currentTime.getDate()< 10 ? "0"+currentTime.getDate() : currentTime.getDate())+'/'+(currentTime.getMonth()+1)+'/'+currentTime.getFullYear();
+        document.getElementById("Today").value=currentTime.getFullYear()+'-'+(currentTime.getMonth()+1)+'-'+(currentTime.getDate()< 10 ? "0"+currentTime.getDate() : currentTime.getDate());
         document.getElementById("CheckInTime").value = currentTime.getHours()+':'+currentTime.getMinutes();
         document.getElementById("CheckOutTime").value = currentTime.getHours()+1+':'+currentTime.getMinutes();
     }
