@@ -65,7 +65,7 @@
             </a>
         </li>
         <hr class="sidebar-divider">
-        <div class="version">Version 2.1.5</div>
+        <div class="version">Version 2.1.8</div>
     </ul>
 
 
