@@ -1,0 +1,58 @@
+package co.kr.miroom.board.controller;
+
+import co.kr.miroom.board.service.BoardService;
+import co.kr.miroom.board.service.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+public class EventController {
+
+    @Autowired
+    private BoardService boardService;
+
+    @Autowired
+    private ReservationService reservationService;
+
+    @RequestMapping(value="/dashboard/newReservation", method = RequestMethod.POST)
+    public String newReservation(Model model, HttpServletRequest request) {
+
+        // 중복 파라미터
+        Map reservation =  new HashMap();
+        reservation.put("Today",request.getParameter("Today"));
+        reservation.put("CheckInTime",request.getParameter("CheckInTime"));
+        reservation.put("CheckOutTime",request.getParameter("CheckOutTime"));
+        reservation.put("room_id",request.getParameter("selectRoom"));
+
+        // 중복 체크
+        if(reservationService.CheckDuplication(reservation) == 0) {
+            // 예약자 등록
+            Map param = new HashMap();
+            param.put("reserver_name", request.getParameter("ReservationName"));
+            param.put("reserver_phone", request.getParameter("ReservationPhone"));
+            reservationService.addReserver(param);
+
+            // 예약등록
+            String check_in = request.getParameter("Today")+" "+ request.getParameter("CheckInTime");
+            String check_out = request.getParameter("Today")+" "+ request.getParameter("CheckOutTime");
+            reservation.put("check_in", check_in);
+            reservation.put("check_out",check_out);
+            reservation.put("reserver_id", param.get("reserver_id"));
+            reservationService.addReservation(reservation);
+            model.addAttribute("msg","예약 되었습니다.");
+            model.addAttribute("url","/dashboard/reservationtable");
+        }
+        else {
+            model.addAttribute("msg","해당 시간에 예약이 불가합니다.");
+            model.addAttribute("url","/dashboard/reservationtable");
+        }
+        return "handler/ReservationRedirect";
+    }
+}

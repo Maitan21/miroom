@@ -26,6 +26,11 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
+    public int CheckDuplication(Map param) {
+        return reservationMapper.CheckDuplication(param);
+    }
+
+    @Override
     public void addReserver(Map param) {
         reservationMapper.InsertReserver(param);
     }

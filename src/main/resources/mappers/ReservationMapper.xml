@@ -39,6 +39,16 @@
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
          WHERE date_format(check_in, '%Y-%m-%d') = CURDATE();
     </select>
+    <select id="CheckDuplication" resultType="int" parameterType="java.util.HashMap">
+        <![CDATA[
+        select count(*) cnt
+        FROM reservation
+        WHERE room_id = #{room_id}
+        AND date_format(check_in, '%Y-%m-%d') = #{Today}
+        AND date_format(check_in, '%H:%i') <= #{CheckOutTime}
+        AND date_format(check_out, '%H:%i') >= #{CheckInTime};
+        ]]>
+    </select>
 
      <insert id="InsertReserver" parameterType="java.util.HashMap">
         <selectKey resultType="int" keyProperty="reserver_id" order="AFTER">

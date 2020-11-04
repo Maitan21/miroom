@@ -149,31 +149,7 @@ public class BoardController {
 
         return mv;
     }
-    @RequestMapping(value="/dashboard/newReservation", method = RequestMethod.POST)
-    public String newReservation(Model model, HttpServletRequest request) {
 
-        Map param = new HashMap();
-        param.put("reserver_name", request.getParameter("ReservationName"));
-        param.put("reserver_phone", request.getParameter("ReservationPhone"));
-
-        reservationService.addReserver(param);
-        String seq = String.valueOf(param.get("reserver_id"));
-        System.out.println(seq);
-
-        Map reservation =  new HashMap();
-
-        String check_in = request.getParameter("Today")+" "+ request.getParameter("CheckInTime");
-        String check_out = request.getParameter("Today")+" "+ request.getParameter("CheckOutTime");
-
-        reservation.put("check_in", check_in);
-        reservation.put("check_out",check_out);
-        reservation.put("room_id",request.getParameter("selectRoom"));
-        reservation.put("reserver_id", param.get("reserver_id"));
-
-        reservationService.addReservation(reservation);
-
-        return "redirect:/dashboard/reservationtable";
-    }
         //TODO 차트
     @RequestMapping("/dashboard/chart")
     public String chart() {
