@@ -18,4 +18,6 @@ public interface ReservationService {
     public void addReserver(Map param);
 
     public void addReservation(Map param);
+
+    public Integer DeleteReservation(Map param);
 }

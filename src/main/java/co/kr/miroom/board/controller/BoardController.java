@@ -47,8 +47,6 @@ public class BoardController {
         List<BoardVO> room = boardService.selectRoomList();
         list.add(room);
 
-
-
         //전달
         mv.addObject("list",list);
 

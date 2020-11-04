@@ -20,4 +20,6 @@ public interface ReservationMapper {
     // 예약 등록
     void InsertReservation(Map param);
 
+    Integer DeleteReservation(Map param);
+
 }

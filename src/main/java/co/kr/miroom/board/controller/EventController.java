@@ -55,4 +55,26 @@ public class EventController {
         }
         return "handler/ReservationRedirect";
     }
+
+    @RequestMapping(value="/dashboard/deleteReservation", method = RequestMethod.GET)
+    public String deleteReservation(Model model, HttpServletRequest request) {
+
+        // 중복 파라미터
+        Map reservation =  new HashMap();
+        System.out.println(request.getParameter("id"));
+
+        reservation.put("reserve_id",request.getParameter("id"));
+
+        if(reservationService.DeleteReservation(reservation)!=0)
+        {
+            model.addAttribute("msg","예약내역을 삭제하였습니다.");
+            model.addAttribute("url","/dashboard/reservationtable");
+        }
+        else {
+            model.addAttribute("msg", "예약내역 삭제에 실패하였습니다.");
+            model.addAttribute("url", "/dashboard/reservationtable");
+        }
+
+        return "handler/ReservationRedirect";
+    }
 }

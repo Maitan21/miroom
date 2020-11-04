@@ -63,5 +63,9 @@
         values (#{check_in}, #{check_out}, #{room_id}, #{reserver_id});
     </insert>
 
+    <delete id="DeleteReservation"  parameterType="java.util.HashMap">
+        DELETE FROM reservation WHERE reserve_id = #{reserve_id};
+    </delete>
+
 </mapper>
 

@@ -39,4 +39,9 @@ public class ReservationServiceImpl implements ReservationService{
     public void addReservation(Map param) {
         reservationMapper.InsertReservation(param);
     }
+
+    @Override
+    public Integer DeleteReservation(Map param) {
+        return reservationMapper.DeleteReservation(param);
+    }
 }
