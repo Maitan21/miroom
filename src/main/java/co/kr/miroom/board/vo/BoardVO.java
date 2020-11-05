@@ -11,6 +11,15 @@ public class BoardVO {
     private String location;
     private String image;
     private String feature;
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public int getRoom_id() {
         return room_id;

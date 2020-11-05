@@ -190,7 +190,17 @@
                                         <td><c:out value="${item.room_name}"></c:out></td>
                                         <td><c:out value="${item.size}"></c:out></td>
                                         <td><c:out value="${item.location}"></c:out></td>
-                                        <td> - </td>
+                                        <c:choose>
+                                            <c:when test="${item.status == 0}">
+                                                <td><span class="badge badge-success">이용가능</span></td>
+                                            </c:when>
+                                            <c:when test="${item.status == 1}">
+                                                <td><span class="badge badge-warning">준비중</span></td>
+                                            </c:when>
+                                            <c:when test="${item.status == 2}">
+                                                <td><span class="badge badge-danger">이용불가</span></td>
+                                            </c:when>
+                                        </c:choose>
                                         <td>
                                             <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
                                             <c:set var="modalint[]" value = "${item.room_name}"/>

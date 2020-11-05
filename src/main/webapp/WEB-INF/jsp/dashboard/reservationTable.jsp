@@ -294,7 +294,14 @@
                                             <label for="selectRoom">회의실 선택</label>
                                             <select class="form-control" id="selectRoom" name="selectRoom" required="">
                                                 <c:forEach var = "room" items="${list[0]}" varStatus="no">
-                                                <option value="${room.room_id}">${room.room_name}</option>
+                                                    <c:choose>
+                                                        <c:when test="${room.status == 0}">
+                                                            <option value="${room.room_id}">${room.room_name}</option>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <option value="${room.room_id}" disabled>${room.room_name}</option>
+                                                        </c:otherwise>
+                                                    </c:choose>
                                                 </c:forEach>
                                             </select>
                                         </div>
