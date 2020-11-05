@@ -20,7 +20,7 @@
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
          ORDER BY reserve_id DESC;
     </select>
-
+    
     <select id="ReservationToday" parameterType="String" resultType="co.kr.miroom.board.vo.ReservationVO">
          select reserve_id, reserver_name,
          ifnull(CASE CHAR_LENGTH(reserver_phone)

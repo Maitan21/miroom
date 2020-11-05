@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.kr.miroom.board.mapper.ChartMapper">
+
+    <select id="Chart7days" resultType="java.util.HashMap">
+        <![CDATA[
+        set @date_start := (SELECT  date_add(now(),interval -7 day)),
+        @i := 0;
+        SELECT date_format(ADDDATE(@date_start, INTERVAL @i:=@i+1 Day),'%m / %d')AS date,
+        IFNULL((
+        SELECT COUNT(*) FROM reservation AS m2
+        WHERE DATE(m2.check_in) = DATE(ADDDATE(@date_start, INTERVAL @i DAY))
+        ),0) AS total
+        FROM reservation AS m1
+        HAVING @i < 7;
+        ]]>
+    </select>
+
+    <select id="CountToday" resultType="Integer">
+        <![CDATA[
+        select count(*) AS cnt from reservation WHERE date_format(check_in, '%Y-%m-%d') = CURDATE();
+        ]]>
+    </select>
+
+    <select id="CountWeek" resultType="Integer">
+        <![CDATA[
+        select count(*) AS cnt from reservation where check_in > date_add(now(),interval -7 day);
+        ]]>
+    </select>
+
+    <select id="CountMonth" resultType="Integer">
+        <![CDATA[
+        SELECT count(*) AS cnt FROM reservation WHERE Month((check_in)) = Month(CURDATE());
+        ]]>
+    </select>
+
+  </mapper>
+

@@ -2,6 +2,7 @@ package co.kr.miroom.board.controller;
 
 import co.kr.miroom.board.mapper.ReservationMapper;
 import co.kr.miroom.board.service.BoardService;
+import co.kr.miroom.board.service.ChartService;
 import co.kr.miroom.board.service.ReservationService;
 import co.kr.miroom.board.vo.BoardVO;
 import co.kr.miroom.board.vo.ReservationVO;
@@ -33,6 +34,9 @@ public class BoardController {
     @Autowired
     private ReservationService reservationService;
 
+    @Autowired
+    private ChartService chartService;
+
     //TODO Main
     @RequestMapping("/dashboard/home")
     public ModelAndView ViewHome(Authentication authentication) throws Exception{
@@ -45,10 +49,23 @@ public class BoardController {
 
         //list 1 : 방목록
         List<BoardVO> room = boardService.selectRoomList();
+
+        List<HashMap<String,Integer>> ChartData = chartService.Chart7days();
+
+        Integer cntToday = chartService.CountToday();
+        Integer cntWeek = chartService.CountWeek();
+        Integer cntMonth = chartService.CountMonth();
+
+
+
         list.add(room);
 
         //전달
         mv.addObject("list",list);
+        mv.addObject("cntToday",cntToday);
+        mv.addObject("cntWeek",cntWeek);
+        mv.addObject("cntMonth",cntMonth);
+        mv.addObject("chart",ChartData);
 
         return mv;
     }

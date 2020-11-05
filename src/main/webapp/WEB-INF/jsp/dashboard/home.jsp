@@ -184,8 +184,8 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1"> 이용가능 회의실</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">${cntAble}</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">오늘 예약자</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">${cntToday} 명</div>
                             <!--
                             <div class="mt-2 mb-0 text-muted text-xs">
                               <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
@@ -206,8 +206,8 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">예약된 회의실</div>
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${cntResrve}</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">주간 이용자</div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${cntWeek} 명</div>
                             <!--
                             <div class="mt-2 mb-0 text-muted text-xs">
                               <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
@@ -228,8 +228,8 @@
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">오늘 이용자 수 </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">${toDay}</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">월간 이용자</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">${cntMonth} 명</div>
                             <!--
                             <div class="mt-2 mb-0 text-muted text-xs">
                               <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
@@ -306,19 +306,29 @@
                         <table class="table align-items-center table-flush">
                           <thead class="thead-light">
                             <tr>
+                              <th>No.</th>
                               <th>회의실</th>
+                              <th>위치</th>
                               <th>사이즈</th>
                               <th>상태</th>
-                              <th>Detail</th>
+                              <th>상세</th>
                             </tr>
                           </thead>
                           <tbody>
-                          <c:forEach var = "item" items="${list[0]}">
+                          <c:forEach var = "item" items="${list[0]}" varStatus="no">
                             <tr>
+                              <td><a href="#">${item.room_id}</a></td>
                               <td><c:out value="${item.room_name}"></c:out></td>
                               <td><c:out value="${item.size}"></c:out></td>
+                              <td><c:out value="${item.location}"></c:out></td>
                               <td> - </td>
-                              <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                              <td>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#RoomInfo${no.count}" class="btn btn-sm btn-primary">
+                                  <c:set var="modalint[]" value = "${item.room_name}"/>
+                                  상세 보기
+                                </a>
+
+                              </td>
                             </tr>
                           </c:forEach>
 
@@ -330,6 +340,64 @@
                   </div>
               </div>
               <!-- 메인 끝 -->
+
+            <!-- 모달 인포 -->
+            <c:forEach var="name" items="${list[0]}" varStatus="status">
+              <div class="modal fade" id="RoomInfo${status.count}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+                   aria-hidden="true">
+                <div class="text-center">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="RoomDetails">회의실 정보</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="py-3" ><img src="/static/handler/img/home/room5.jpg" width="80%" class="rounded-lg">
+                          <h4 class="text-secondary "><br>${name.room_name}</h4>
+                          <div class="allergy"><span></span></div>
+                          <div class="stats">
+                            <table class="table table-borderless">
+                              <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex flex-column"> <span class="text-center head">방 크기</span> <span class="text-center bottom">${name.size}</span> </div>
+                                </td>
+                                <td>
+                                  <div class="d-flex flex-column"> <span class="text-center head">허용 인원</span> <span class="text-center bottom">${name.capacity} 명</span> </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex flex-column"> <span class="text-center head">위치</span> <span class="text-center bottom">${name.location}</span> </div>
+                                </td>
+                                <td>
+                                  <div class="d-flex flex-column"> <span class="text-center head">특징</span> <span class="text-center bottom">${name.feature}</span></div>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                          <span class="text">수정</span>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon-split"><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
+                          <span class="text">삭제</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </c:forEach>
+
+
 
               <!-- 모달 로그아웃 -->
               <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -382,9 +450,12 @@
 <script src="/static/dash/js/demo/chart-area-demo.js"></script>
 
 <script>
-  var chartLabels = ["월", "화", "수", "목", "금", "토", "일"];
-  var chartData = [0,10,10,20,10,10];
-  chartData.push(30);
+  var chartLabels = [];
+  var chartData = [];
+  <c:forEach var = "list" items="${chart}"> //반복문 돌면서 push
+      chartLabels.push("${list.date}");
+      chartData.push(${list.total});
+  </c:forEach>
   // Area Chart Example
   var ctx = document.getElementById("myAreaChart");
   var myLineChart = new Chart(ctx, {
@@ -392,7 +463,7 @@
     data: {
       labels: chartLabels,
       datasets: [{
-        label: "Earnings",
+        label: "이용자 수",
         lineTension: 0.3,
         backgroundColor: "rgba(78, 115, 223, 0.5)",
         borderColor: "rgba(78, 115, 223, 1)",
@@ -468,7 +539,7 @@
         callbacks: {
           label: function(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+            return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
           }
         }
       }
