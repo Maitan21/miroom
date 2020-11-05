@@ -11,6 +11,8 @@ public interface ChartMapper {
     List<HashMap<String,Integer>>Chart7days() throws  Exception;
 
     Integer CountToday() throws Exception;
+
     Integer CountWeek() throws Exception;
+
     Integer CountMonth() throws Exception;
 }

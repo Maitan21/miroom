@@ -164,7 +164,7 @@
                     <div class="card">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">회의실 현황</h6>
-                            <a class="m-0 float-right btn btn-danger btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#RoomAdd">관리 &nbsp<i
+                            <a class="m-0 float-right btn btn-danger btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#RoomAdd">추가 &nbsp<i
                                     class="fas fa-chevron-right"></i>
                             </a>
 

@@ -299,7 +299,7 @@
                     <div class="card">
                       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">회의실 현황</h6>
-                        <a class="m-0 float-right btn btn-danger btn-sm" href="/dashboard/roomtable">View More <i
+                        <a class="m-0 float-right btn btn-danger btn-sm" href="/dashboard/roomtable"> 관리 <i
                             class="fas fa-chevron-right"></i></a>
                       </div>
                       <div class="table-responsive">

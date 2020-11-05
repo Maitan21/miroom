@@ -164,7 +164,7 @@
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">예약 현황</h6>
                             <div class="row" >
-                                <a class="m-0 float-right btn btn-success btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#ReservationAdd">추가 &nbsp<i
+                                <a class="m-0 float-right btn btn-danger btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#ReservationAdd">추가 &nbsp<i
                                         class="fas fa-chevron-right"></i>
                                 </a>
                             </div>
