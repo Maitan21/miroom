@@ -68,6 +68,8 @@
 
 5. `target` 에서`nohup java -jar [빌드된 war 파일이름] &`
 
+* Update 시 : ps -ef | grep java kill-9로 프로세스 종료
+
 ## 기여자
 - 경북대학교 컴퓨터학부 산학프로젝트
 - (주) 제이솔루션
