@@ -164,7 +164,7 @@
                         <div class="row align-items-center">
                           <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">총 회의실</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">${fn:length(list[0])}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">${fn:length(list[0])} 개</div>
                             <!--<div class="mt-2 mb-0 text-muted text-xs">
                               <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
                               <span>Since last month</span>
@@ -186,11 +186,11 @@
                           <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">오늘 예약자</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">${cntToday} 명</div>
-                            <!--
+
                             <div class="mt-2 mb-0 text-muted text-xs">
-                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                              <span>Since last years</span>
-                            </div>-->
+                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 3%</span>
+                              <span>Since yesterday</span>
+                            </div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-shopping-cart fa-2x text-success"></i>
@@ -208,11 +208,11 @@
                           <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">주간 이용자</div>
                             <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${cntWeek} 명</div>
-                            <!--
+
                             <div class="mt-2 mb-0 text-muted text-xs">
-                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                              <span>Since last month</span>
-                            </div>-->
+                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 1.4%</span>
+                              <span>Since last week</span>
+                            </div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-users fa-2x text-info"></i>
@@ -230,11 +230,11 @@
                           <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">월간 이용자</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">${cntMonth} 명</div>
-                            <!--
+
                             <div class="mt-2 mb-0 text-muted text-xs">
-                              <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                              <span>Since yesterday</span>
-                            </div> -->
+                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 0.01%</span>
+                              <span>Since last month</span>
+                            </div>
                           </div>
                           <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-warning"></i>
@@ -258,42 +258,6 @@
                     </div>
                   </div>
 
-                  <!-- Pie Chart
-                  <div class="col-xl-4 col-lg-5">
-                    <div class="card mb-4">
-                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary"></h6>
-                        <div class="dropdown no-arrow">
-                          <a class="dropdown-toggle btn btn-primary btn-sm" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Month <i class="fas fa-chevron-down"></i>
-                          </a>
-                          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                            aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Select Periode</div>
-                            <a class="dropdown-item" href="#">Today</a>
-                            <a class="dropdown-item" href="#">Week</a>
-                            <a class="dropdown-item active" href="#">Month</a>
-                            <a class="dropdown-item" href="#">This Year</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <div class="mb-3">
-                      </div></div>
-                      <div class="card-footer text-center">
-                        <a class="m-0 small text-primary card-link" href="#">View More <i
-                            class="fas fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                   -->
-                   <!--
-                    ToDo List
-
-                    DB 연결 후 변수 값으로 자동 출력 되도록
-
-                  -->
                   <!-- 현황 -->
                   <div class="col-xl-12 col-lg-7 mb-4">
                     <div class="card">
