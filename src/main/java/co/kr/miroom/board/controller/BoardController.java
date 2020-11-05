@@ -167,7 +167,14 @@ public class BoardController {
 
         //TODO 차트
     @RequestMapping("/dashboard/chart")
-    public String chart() {
-        return "/dashboard/chart";
+    public ModelAndView Chart(Authentication authentication) throws Exception{
+
+        ModelAndView mv = new ModelAndView("/dashboard/chart");
+
+        List<HashMap<String,Integer>> ChartData = chartService.Chart7days();
+
+        mv.addObject("chart",ChartData);
+
+        return mv;
     }
 }
