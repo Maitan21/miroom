@@ -13,7 +13,7 @@ public interface ReservationService {
 
     public List<ReservationVO> ReservationToday() throws Exception;
 
-    public int CheckDuplication(Map param);
+    public Integer CheckDuplication(Map param);
 
     public void addReserver(Map param);
 

@@ -14,7 +14,7 @@ public interface ReservationMapper {
 
     List<ReservationVO> ReservationToday();
 
-    int CheckDuplication(Map param);
+    Integer CheckDuplication(Map param);
     // 예약자 등록
     void InsertReserver(Map param);
     // 예약 등록

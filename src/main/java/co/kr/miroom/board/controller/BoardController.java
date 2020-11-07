@@ -56,8 +56,6 @@ public class BoardController {
         Integer cntWeek = chartService.CountWeek();
         Integer cntMonth = chartService.CountMonth();
 
-
-
         list.add(room);
 
         //전달

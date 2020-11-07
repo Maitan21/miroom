@@ -39,7 +39,7 @@
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
          WHERE date_format(check_in, '%Y-%m-%d') = CURDATE();
     </select>
-    <select id="CheckDuplication" resultType="int" parameterType="java.util.HashMap">
+    <select id="CheckDuplication" resultType="Integer" parameterType="java.util.HashMap">
         <![CDATA[
         select count(*) cnt
         FROM reservation
