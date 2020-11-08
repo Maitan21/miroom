@@ -16,16 +16,25 @@ public class ReservationVO {
     private String reserver_name;
     private String reserver_phone;
     private String room_name;
-    private String Times;
+    private Date check_in;
+    private Date check_out;
     private int room_id;
     private int reserver_id;
 
-    public String getTimes() {
-        return Times;
+    public Date getCheck_in() {
+        return check_in;
     }
 
-    public void setTimes(String times) {
-        Times = times;
+    public void setCheck_in(Date check_in) {
+        this.check_in = check_in;
+    }
+
+    public Date getCheck_out() {
+        return check_out;
+    }
+
+    public void setCheck_out(Date check_out) {
+        this.check_out = check_out;
     }
 
     public int getReserve_id() {

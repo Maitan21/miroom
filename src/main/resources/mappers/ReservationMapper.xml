@@ -15,6 +15,8 @@
          date_format(check_out, '%Y / %m / %d') AS check_out_Date,
          date_format(check_out, '%H') AS check_out_Hour,
          date_format(check_out, '%i') AS check_out_Min,
+         check_in,
+         check_out,
          room.room_id AS room_id,
          reserver.reserver_id AS reserver_id
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
@@ -34,6 +36,8 @@
          date_format(check_out, '%Y / %m / %d') AS check_out_Date,
          date_format(check_out, '%H') AS check_out_Hour,
          date_format(check_out, '%i') AS check_out_Min,
+         check_in,
+         check_out,
          room.room_id AS room_id,
          reserver.reserver_id AS reserver_id
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
