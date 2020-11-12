@@ -5,7 +5,7 @@
 <img src="https://user-images.githubusercontent.com/45276804/98888133-b00c5200-24da-11eb-8cab-51e55db2574c.png" width="100%">
 
 ## 테이블 
-cf.) function
+### cf.) function
 - NN : `Not Null`
 - UQ : `Value Unique`
 - AI : `Auto Incremental`
