@@ -248,14 +248,12 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="/dashboard/deleteReservation?id=${name.reserve_id}" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
+                                        <a href="/dashboard/modifyReservation?id=${name.reserve_id}" class="btn btn-success btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
                                             <span class="text">수정</span>
                                         </a>
                                         <a href="/dashboard/deleteReservation?id=${name.reserve_id}" class="btn btn-danger btn-icon-split" style="margin-right: 10px;"><span class="icon text-white-50"><i class="fas fa-check"></i></span>
                                             <span class="text">삭제</span>
                                         </a>
-
-
                                     </div>
                                 </div>
                             </div>

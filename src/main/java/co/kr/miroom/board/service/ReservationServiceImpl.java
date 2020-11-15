@@ -26,6 +26,12 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
+    public List<ReservationVO> selectOneReservation(Map param) throws Exception {
+        return reservationMapper.selectOneReservation(param);
+
+    }
+
+    @Override
     public Integer CheckDuplication(Map param) {
         return reservationMapper.CheckDuplication(param);
     }
@@ -43,5 +49,10 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public Integer DeleteReservation(Map param) {
         return reservationMapper.DeleteReservation(param);
+    }
+
+    @Override
+    public Integer UpdateReservation(Map param) {
+        return reservationMapper.UpdateReservation(param);
     }
 }

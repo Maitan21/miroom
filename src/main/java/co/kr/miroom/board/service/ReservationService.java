@@ -11,6 +11,8 @@ public interface ReservationService {
 
     public List<ReservationVO> selectReservationList() throws Exception;
 
+    public List<ReservationVO> selectOneReservation(Map param) throws Exception;
+
     public List<ReservationVO> ReservationToday() throws Exception;
 
     public Integer CheckDuplication(Map param);
@@ -20,4 +22,6 @@ public interface ReservationService {
     public void addReservation(Map param);
 
     public Integer DeleteReservation(Map param);
+
+    public Integer UpdateReservation(Map param);
 }

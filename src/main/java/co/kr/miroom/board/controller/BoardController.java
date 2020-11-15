@@ -131,7 +131,6 @@ public class BoardController {
         List<ReservationVO> reservations = reservationService.selectReservationList();
         list.add(reservations);
 
-
         //전달
         mv.addObject("list",list);
 
@@ -159,6 +158,31 @@ public class BoardController {
 
         //전달
         mv.addObject("list",list);
+
+        return mv;
+    }
+
+    @RequestMapping(value="/dashboard/modifyReservation", method = RequestMethod.GET)
+    public ModelAndView modifyReservationform(Authentication authentication, HttpServletRequest request) throws Exception {
+
+        ModelAndView mv = new ModelAndView("/handler/modifyReservation");
+
+        Map reservation =  new HashMap();
+        reservation.put("reserve_id",request.getParameter("id"));
+
+        //최종 전달할 객체
+        ArrayList<Object> list = new ArrayList<Object>();
+
+        //list 1 : 방목록
+        List<BoardVO> room = boardService.selectRoomList();
+        list.add(room);
+
+        List<ReservationVO> reservations = reservationService.selectOneReservation(reservation);
+        list.add(reservations);
+
+        //전달
+        mv.addObject("list",list);
+
 
         return mv;
     }

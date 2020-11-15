@@ -22,6 +22,23 @@
          from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
          ORDER BY reserve_id DESC;
     </select>
+
+    <select id="selectOneReservation" parameterType="java.util.HashMap" resultType="co.kr.miroom.board.vo.ReservationVO">
+         <![CDATA[
+         select reserve_id, reserver_name,
+         reserver_phone,
+         room_name,
+         date_format(check_in, '%Y-%m-%d') AS check_in_Date,
+         date_format(check_in, '%H') AS check_in_Hour,
+         date_format(check_in, '%i') AS check_in_Min,
+         date_format(check_out, '%H') AS check_out_Hour,
+         date_format(check_out, '%i') AS check_out_Min,
+         room.room_id AS room_id,
+         reserver.reserver_id AS reserver_id
+         from reservation Left join reserver on reservation.reserver_id = reserver.reserver_id Left join room on reservation.room_id = room.room_id
+         WHERE reserve_id = #{reserve_id};
+         ]]>
+    </select>
     
     <select id="ReservationToday" parameterType="String" resultType="co.kr.miroom.board.vo.ReservationVO">
          select reserve_id, reserver_name,
@@ -72,6 +89,18 @@
     <delete id="DeleteReservation"  parameterType="java.util.HashMap">
         DELETE FROM reservation WHERE reserve_id = #{reserve_id};
     </delete>
+
+    <update id="UpdateReservation" parameterType="java.util.HashMap">
+        <![CDATA[
+            UPDATE reserver SET
+            reserver_name = #{reserver_name}, reserver_phone = #{reserver_phone}
+            WHERE reserver_id = #{reserver_id};
+
+            UPDATE reservation SET
+            check_in = #{check_in}, check_out = #{check_out}, room_id = #{room_id}, reserver_id = #{reserver_id}
+            WHERE reserve_id = #{reserve_id};
+        ]]>
+    </update>
 
 </mapper>
 

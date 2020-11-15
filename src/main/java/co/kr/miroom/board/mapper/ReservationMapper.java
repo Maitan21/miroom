@@ -14,6 +14,8 @@ public interface ReservationMapper {
 
     List<ReservationVO> ReservationToday();
 
+    List<ReservationVO> selectOneReservation(Map param);
+
     Integer CheckDuplication(Map param);
     // 예약자 등록
     void InsertReserver(Map param);
@@ -21,5 +23,7 @@ public interface ReservationMapper {
     void InsertReservation(Map param);
 
     Integer DeleteReservation(Map param);
+
+    Integer UpdateReservation(Map param);
 
 }
