@@ -176,8 +176,8 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>회의실</th>
-                                    <th>위치</th>
                                     <th>사이즈</th>
+                                    <th>위치</th>
                                     <th>상태</th>
                                     <th>상세</th>
                                 </tr>
