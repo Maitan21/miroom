@@ -1,6 +1,6 @@
 # API
 
-### RoomListALL
+## RoomListALL
 - URL : http://kr.cafecremona.shop:8080/api/RoomList
 - Result Type : List
 
@@ -16,7 +16,7 @@
 | status | int | `0`
 
 
-### ReservationListALL
+## ReservationListALL
 - URL : http://kr.cafecremona.shop:8080/api/ReservationList
 - Result Type : List
 
