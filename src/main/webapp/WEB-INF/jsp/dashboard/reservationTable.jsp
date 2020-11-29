@@ -4,6 +4,7 @@
 <link href="/static/dash/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <link href="/static/dash/vendor/clock-picker/clockpicker.css" rel="stylesheet">
 <link href="/static/dash/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" >
+<link href="/static/dash/vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css" rel="stylesheet" >
 <style>
     .head{
         color: #97989a;
@@ -304,6 +305,12 @@
                                             </select>
                                         </div>
 
+                                        <!-- 예약 인원 -->
+                                        <div class="form-group">
+                                            <label for="selectPerson">예약 인원</label>
+                                            <input id="selectPerson" name ="selectPerson" type="text" class="form-control">
+                                        </div>
+
                                         <!-- 예약일자 -->
                                         <div class="form-group" id="ReservationDate">
                                             <label>예약 일자</label>
@@ -404,6 +411,8 @@
 <!-- Page level plugins -->
 <script src="/static/dash/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="/static/dash/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Bootstrap Touchspin -->
+<script src="/static/dash/vendor/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js"></script>
 <!--DateAndClockpicker plugins -->
 <script src="/static/dash/vendor/clock-picker/clockpicker.js"></script>
 <script src="/static/dash/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
@@ -437,6 +446,15 @@
             todayBtn: 'linked',
             todayHighlight: true,
             autoclose: true,
+        });
+
+        $('#selectPerson').TouchSpin({
+            min: 1,
+            max: 50,
+            initval: 1,
+            boostat: 5,
+            maxboostedstep: 10,
+            verticalbuttons: true,
         });
 
     });
