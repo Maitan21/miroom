@@ -238,7 +238,7 @@
                                                             </c:when>
                                                             <c:otherwise>
                                                                 <td>
-                                                                    <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name} 외 ${name.person -1}</span> </div>
+                                                                    <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name} 외 ${name.person -1} 명</span> </div>
                                                                 </td>
                                                             </c:otherwise>
                                                         </c:choose>
@@ -319,7 +319,7 @@
                                         <!-- 예약 인원 -->
                                         <div class="form-group">
                                             <label for="selectPerson">예약 인원</label>
-                                            <input id="selectPerson" name ="selectPerson" type="text" class="form-control">
+                                            <input id="selectPerson" name ="selectPerson" type="text" class="form-control" required="">
                                         </div>
 
                                         <!-- 예약일자 -->

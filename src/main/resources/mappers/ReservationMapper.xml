@@ -83,8 +83,8 @@
      </insert>
 
     <insert id="InsertReservation" parameterType="java.util.HashMap">
-        insert into reservation (check_in, check_out, room_id, reserver_id)
-        values (#{check_in}, #{check_out}, #{room_id}, #{reserver_id});
+        insert into reservation (check_in, check_out, room_id, reserver_id, person)
+        values (#{check_in}, #{check_out}, #{room_id}, #{reserver_id}, #{person});
     </insert>
 
     <delete id="DeleteReservation"  parameterType="java.util.HashMap">

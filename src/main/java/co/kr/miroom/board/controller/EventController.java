@@ -48,6 +48,7 @@ public class EventController {
             reservation.put("check_in", check_in);
             reservation.put("check_out",check_out);
             reservation.put("reserver_id", param.get("reserver_id"));
+            reservation.put("person",request.getParameter("selectPerson"));
             reservationService.addReservation(reservation);
             model.addAttribute("msg","예약 되었습니다.");
             model.addAttribute("url","/dashboard/reservationtable");
@@ -108,7 +109,6 @@ public class EventController {
             model.addAttribute("msg","수정에 실패하였습니다.");
             model.addAttribute("url","/dashboard/reservationtable");
         }
-
 
         return "handler/ReservationRedirect";
     }
