@@ -176,6 +176,7 @@
                                 <tr>
                                     <th>예약 번호</th>
                                     <th>예약자</th>
+                                    <th>입장 인원</th>
                                     <th>회의실</th>
                                     <th>예약 날짜</th>
                                     <th>예약 시간</th>
@@ -188,6 +189,7 @@
                                     <tr>
                                         <td><a href="#">${item.reserve_id}</a></td>
                                         <td><c:out value="${item.reserver_name}"></c:out></td>
+                                        <td><c:out value="${item.person}"></c:out></td>
                                         <td><c:out value="${item.room_name}"></c:out></td>
                                         <td><c:out value="${item.check_in_Date}"></c:out></td>
                                         <td><c:out value="${item.check_in_Hour} : ${item.check_in_Min} ~ ${item.check_out_Hour} : ${item.check_out_Min}"></c:out></td>
@@ -228,9 +230,18 @@
                                                 <table class="table table-borderless">
                                                     <tbody>
                                                     <tr>
-                                                        <td>
-                                                            <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name}</span> </div>
-                                                        </td>
+                                                        <c:choose>
+                                                            <c:when test="${name.person == 1}">
+                                                                <td>
+                                                                    <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name}</span> </div>
+                                                                </td>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <td>
+                                                                    <div class="d-flex flex-column"> <span class="text-center head">예약자</span> <span class="text-center bottom">${name.reserver_name} 외 ${name.person -1}</span> </div>
+                                                                </td>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                         <td>
                                                             <div class="d-flex flex-column"> <span class="text-center head">예약자 폰번호</span> <span class="text-center bottom">${name.reserver_phone}</span> </div>
                                                         </td>

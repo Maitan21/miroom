@@ -18,8 +18,17 @@ public class ReservationVO {
     private String room_name;
     private Date check_in;
     private Date check_out;
+    private int person;
     private int room_id;
     private int reserver_id;
+
+    public int getPerson() {
+        return person;
+    }
+
+    public void setPerson(int person) {
+        this.person = person;
+    }
 
     public Date getCheck_in() {
         return check_in;
