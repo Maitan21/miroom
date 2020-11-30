@@ -297,8 +297,8 @@
     // --------------------------- schelduer label ---------------------------
     var sked2Config = {
         caption: '회의실 명',
-        start: today(9, 0),
-        end: today(22, 0),
+        start: today(6, 0),
+        end: today(24, 0),
         showEventTime: true,
         showEventDuration: true,
         locations: locations.map(function(location) {
