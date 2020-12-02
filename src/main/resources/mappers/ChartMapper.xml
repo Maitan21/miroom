@@ -5,7 +5,7 @@
     <select id="Chart7days" resultType="java.util.HashMap">
         <![CDATA[
         set @date_start := (SELECT  date_add(now(),interval -7 day)),
-        @i := 0;
+        @i := 2;
         SELECT date_format(ADDDATE(@date_start, INTERVAL @i:=@i+1 Day),'%m / %d')AS date,
         IFNULL((
         SELECT COUNT(*) FROM reservation AS m2
