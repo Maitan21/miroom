@@ -303,10 +303,10 @@
                                     <div class="form-group">
                                         <label for="selectSize">방 사이즈</label>
                                         <select class="form-control" id="selectSize" required="">
-                                            <option value="소">소</option>
-                                            <option value="중">중</option>
-                                            <option value="대">대</option>
-                                            <option value="특대">특대</option>
+                                            <option value="소">소 (4명 이하)</option>
+                                            <option value="중">중 (5 ~ 8명)</option>
+                                            <option value="대">대 (9 ~ 12명)</option>
+                                            <option value="특대">특대 (13명 이상)</option>
                                         </select>
                                     </div>
 
