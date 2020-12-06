@@ -49,3 +49,25 @@
 |   check_out    | DATETIME |-| NN| - |
 |     room_id      | INT| foreign(room)| NN | - |
 | reserver_id | INT | foreign(reserver) | NN | - |
+
+
+### facility
+
+|    column     |    Resulty Type       | Key Type | function | default|
+| :----------: | :---------------------: | :----------: |:----------: |:----------: |
+|    reservation_id    |    INT  | primary| NN / UQ / AI | - |
+|      check_in     |    DATETIME  |-| NN | - |
+|   check_out    | DATETIME |-| NN| - |
+|     room_id      | INT| foreign(room)| NN | - |
+| reserver_id | INT | foreign(reserver) | NN | - |
+
+
+### account
+
+|    column     |    Resulty Type       | Key Type | function | default|
+| :----------: | :---------------------: | :----------: |:----------: |:----------: |
+|    reservation_id    |    INT  | primary| NN / UQ / AI | - |
+|      check_in     |    DATETIME  |-| NN | - |
+|   check_out    | DATETIME |-| NN| - |
+|     room_id      | INT| foreign(room)| NN | - |
+| reserver_id | INT | foreign(reserver) | NN | - |
