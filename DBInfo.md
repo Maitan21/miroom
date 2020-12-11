@@ -2,7 +2,7 @@
 
 ## 다이아그램
 
-<img src="https://user-images.githubusercontent.com/45276804/98888133-b00c5200-24da-11eb-8cab-51e55db2574c.png" width="100%">
+<img src="https://user-images.githubusercontent.com/45276804/101851748-7bee8480-3b9f-11eb-985a-cd28f5a8b3e3.png" width="100%">
 
 ## 테이블 
 ### cf.) function
