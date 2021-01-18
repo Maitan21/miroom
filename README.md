@@ -1,5 +1,5 @@
 # M I R O O M 회의실 관리 플랫폼
-- 'Spring Boot' + 'Spring Security' + 'My batis' + 'AWS RDS(My SQL)` + `AWS EC2`를 이용한 회의실 관리 플랫폼
+- `Spring Boot` + `Spring Security` + `My batis` + `AWS RDS(My SQL)` + `AWS EC2`를 이용한 회의실 관리 플랫폼
 - 최신 버전 : `V.2.1.8` 
 - [DEMO](http://kr.cafecremona.shop:8080/)
 ## SCREENSHOT
