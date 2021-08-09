@@ -27,7 +27,7 @@
 - `AWS EC2` 와 `AWS RDS`를 이용한 클라우드 서비스
 - `회의실` 현황 조회 / 예약 관리 / 모니터링 
 - `Spring` -> `Spring Boot` 마이그레이션
-- Spring MVC 모델로 구현s
+- Spring MVC 모델로 구현
 ## 개발환경
 
 |     도구     |              버전               |
